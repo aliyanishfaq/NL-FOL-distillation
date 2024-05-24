@@ -16,6 +16,8 @@ class Metrics:
     
     def FOL_BLEU(self, pred_fol, true_fol):
         min_len = min(map(lambda x: len(self.fol_tokenzier(x)), [pred_fol, true_fol]))
+        print(self.fol_tokenzier(pred_fol))
+        print(self.fol_tokenzier(true_fol))
         result = self.bleu.compute(predictions=[pred_fol], references=[[true_fol]], tokenizer=self.fol_tokenzier, max_order=min(4, min_len))
         return result['bleu']
     def Logical_Equivalence(self, pred_fol, true_fol):
@@ -29,14 +31,66 @@ class Metrics:
 
 metric = Metrics()
 
-true_fol = """
-∃x (Film(x) ∧ ((Drama(x) ∧ LongRuntime(x) ∧ MultipleAwards(x)) ∨ (Comedy(x) ∧ ShorterRuntime(x) ∧ BoxOfficeSuccess(x))))
-"""
-
 pred_fol = """
-∃x (Film(x) ∧ ((Drama(x) ∧ LongRuntime(x) ∧ MultipleAwards(x)) ∨ (Comedy(x) ∧ ShorterRuntime(x) ∧ BoxOfficeSuccess(x))))
+Rina \u2115 (student \land \neg caffeine_is_drug) \text{ or } \neg (student \land \neg caffeine_is_drug)
 """
 
-print(metric.FOL_BLEU(pred_fol, true_fol))
-print(metric.Logical_Equivalence(pred_fol, true_fol))
+true_fol = """
+(Student(rina) \u2227 Unaware(rina)) \u2295 \u00ac(Student(rina) \u2228 Unaware(rina))
+"""
+
+import json
+
+def load_data(file_path):
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+    return data
+
+# Load the dataset
+data = load_data('combined_data.json')
+
+
+
+
+#print(metric.FOL_BLEU(pred_fol, true_fol))
+#print(metric.Logical_Equivalence(pred_fol, true_fol))
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+logical_equivalence_scores = []
+bleu_scores = []
+
+for entry in data:
+    pred_fol = entry['predicted_FOL']
+    true_fol = entry['true_FOL']
+    le_score, _, _ = metric.Logical_Equivalence(pred_fol, true_fol)
+    bleu_score = metric.FOL_BLEU(pred_fol, true_fol)
+    logical_equivalence_scores.append(le_score)
+    bleu_scores.append(bleu_score)
+
+# Calculate the median of logical equivalence scores
+median_le_score = np.median(logical_equivalence_scores)
+print(f"Median Logical Equivalence Score: {median_le_score}")
+mean_le_score = np.mean(logical_equivalence_scores)
+print(f"Mean Logical Equivalence Score: {mean_le_score}")
+
+# Plotting the histogram of logical equivalence scores
+plt.hist(logical_equivalence_scores, bins=10, color='blue', alpha=0.7)
+plt.title('Distribution of Logical Equivalence Scores')
+plt.xlabel('Score')
+plt.ylabel('Frequency')
+plt.show()
+
+median_bleu_score = np.median(bleu_scores)
+print(f"Median BLEU Score: {median_bleu_score}")
+mean_bleu_score = np.mean(bleu_scores)
+print(f"Mean BLEU Score: {mean_bleu_score}")
+
+# Plotting the histogram of BLEU scores
+plt.hist(bleu_scores, bins=10, color='green', alpha=0.7)
+plt.title('Distribution of BLEU Scores')
+plt.xlabel('Score')
+plt.ylabel('Frequency')
+plt.show()
 

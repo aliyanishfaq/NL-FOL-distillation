@@ -109,6 +109,9 @@ def msplit(s):
     return res, ''.join(make_str_ls)
 
 class VecRuleEvaluator:
+    dummy_input_str: str = '#DUMMY'
+    dummy_distance: int = 10000
+
     @classmethod
     def default_input_similarity(cls, e1: str, e2: str):
         return edit_dist(e1, e2)

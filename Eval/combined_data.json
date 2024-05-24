@@ -1,0 +1,877 @@
+[
+    {
+        "NL": "As the party's Secretary-General under Mao and Vice Premier in he 1950s, Deng Xiaoping presided over the Anti-Rightist Campaign launched by Mao.",
+        "predicted_FOL": "\u2200x  (Party(x) & SecretaryGeneral(x) & (1950s) -> AntiRightistCampaign(x))",
+        "true_FOL": "PartysSecretaryGeneral(dengxiaoping) \u2227 Under(dengxiaoping, mao) \u2227 VicePremier(dengxiaoping) \u2227 PresidedOver(dengxiaoping, antirightistcampaign) \u2227 LaunchedBy(antirightistcampaign, mao)"
+    },
+    {
+        "NL": "No easy Leetcode problems have an AC rate lower than 20 percent. ",
+        "predicted_FOL": "\u2203x (Party Secretary-General (x) & Mao & Vice Premier in 1950s) \u2192 Anti-Rightist Campaign launched by Mao (x).",
+        "true_FOL": "\u2200x (Easy(x) \u2192 \u00acLowerAC(x))"
+    },
+    {
+        "NL": "Quincy McDuffie can catch many footballs easily.",
+        "predicted_FOL": "\u00acR(Mao, Deng) \u2227 \u00acR(Mao, Anti-Rightist) \u2227 R(Mao, Secretary-General)",
+        "true_FOL": "\u2203x (Football(x) \u2227 CanCatch(quincymcduffie, x))"
+    },
+    {
+        "NL": "Willy is nice.",
+        "predicted_FOL": "\u00ac\u2203x (P(x, Mao, 1950s) \u2227 Q(x, Anti-Rightist Campaign))",
+        "true_FOL": "Nice(willy)"
+    },
+    {
+        "NL": "Taylor neither grew up in a health-conscious childhood home nor does she visit the gym at least once a day.",
+        "predicted_FOL": "\u03c6(X,Y,Z) \u2208 Anti-Rightist Campaign (X) \u2227 Secretary-General (Y) \u2208 Party (Mao) \u2227 Vice Premier (Z) \u2208 Party (Mao)",
+        "true_FOL": "\u00ac(HealthyChildhood(taylor) \u2228 Gym(taylor))"
+    },
+    {
+        "NL": "Minnesota Vikings is a football club.",
+        "predicted_FOL": "\u2227(Party Secretary-General Mao \u2192 Anti-Rightist Campaign launched by Mao)",
+        "true_FOL": "IsFootballClub(minnesota_Vikings)"
+    },
+    {
+        "NL": "If a team wins the NBA finals, then they will have more income.",
+        "predicted_FOL": "\u00ac(\u2203x \u00ac(x = Deng Xiaoping) \u2227 \u00ac (x = Mao))",
+        "true_FOL": "\u2200x (Team(x) \u2227 Won(x, nbafinals) \u2192 MoreIncome(x))"
+    },
+    {
+        "NL": "All people who have a wedding are people who have at least one child.",
+        "predicted_FOL": "\u00ac\u2203x (Party(x) \u2227 Member(x, Mao) \u2227 Member(x, VicePremier)) \u2227 Campaign(x, \"Anti-Rightist Campaign\")",
+        "true_FOL": "\u2200x (Wedding(x) \u2192 Child(x))"
+    },
+    {
+        "NL": "Taylor visits the gym at least once a day.",
+        "predicted_FOL": "\u2227(Party(Mao) \u2227VicePremier(Vice Premier) \u2227year(1950s)) \u2192 Chancellor(Deng Xiaoping)",
+        "true_FOL": "Gym(taylor)"
+    },
+    {
+        "NL": "The lead singer of Imagine Dragons is Dan.",
+        "predicted_FOL": "\u00acR\u2227\u00acL \u2192 P",
+        "true_FOL": "LeadSinger(imagineDragon, dan)"
+    },
+    {
+        "NL": "Grebes lay eggs.",
+        "predicted_FOL": "\u2203x (S(x) \u2227 B(x, 1950s) \u2227 P(x, Mao))",
+        "true_FOL": "\u2200x (Grebes(x) \u2192 LayEgg(x))"
+    },
+    {
+        "NL": "A project is written either in C++ or in Python.",
+        "predicted_FOL": "\u2203x (S(x) & P(x, 1950s)) & \u2203x (V(x) & A(x))",
+        "true_FOL": " \u2200x (Project(x) \u2192 (WrittenIn(x, python) \u2295 WrittenIn(x, c++)))"
+    },
+    {
+        "NL": "No video games released by Nintendo support the PS4 platform.",
+        "predicted_FOL": "\u00acR\u2227(Secretary-General Mao \u2227 Vice Premier in 1950s \u2227 \u00acR)",
+        "true_FOL": "\u2200x (Nintendo(x) \u2192 \u00acSupportPS4(x))"
+    },
+    {
+        "NL": "Elephantopus is a genus of perennial plants in the daisy family.",
+        "predicted_FOL": "\u00ac\u2203x (Secretary-General(x, Mao, 1950-1959) \u2227 Vice Premier(x, Vice Premier Mao, 1950-1959) \u2227 ActivedCampaign(x, Anti-Rightist Campaign, Mao))",
+        "true_FOL": "\u2200x (Elephantopus(x) \u2192 Genus(x, perennialplants) \u2227 BelongTo(x, daisyfamily))"
+    },
+    {
+        "NL": "Everyone at Luis's dinner party has room for dessert, including Luis.",
+        "predicted_FOL": "\u2203x P(x, Mao, 1950s) & P(x, VicePremier) & P(x, Anti-RightistCampaign)",
+        "true_FOL": "\u2200x (AtLuisParty(x) \u2192 RoomFor(x, dessert))"
+    },
+    {
+        "NL": "John works at the Emmet Building.",
+        "predicted_FOL": "\u00acr\u2227\u00acp \u2192 \u00acq",
+        "true_FOL": "\u2203x (Emmet(x) \u2227 Work(john, x))"
+    },
+    {
+        "NL": "Henry is neither a carnivore nor a lizard.",
+        "predicted_FOL": "\u2200x (Party Secretary-General(x) \u2227 Vice Premier(x)) \u2192 Anti-Rightist Campaign(x)",
+        "true_FOL": "\u00acCarnivore(henry) \u2227 \u00acLizard(henry)"
+    },
+    {
+        "NL": "Michael O'Donnell was born in Yorkshire as the son of a general practitioner.",
+        "predicted_FOL": "\u2203x (Secretary-General(x) & VicePremier(x) & 1950s).\n  President(x) \u2227 LaunchedAntiRightistCampaign(x).",
+        "true_FOL": "\u2203x (BornIn(michael, yorkshire) \u2227 Son(michael, x) \u2227 GeneralPractitioner(x))"
+    },
+    {
+        "NL": "People feel tired when they get a glu.",
+        "predicted_FOL": "\u2203x (S(x) AND P(x, 1950s) AND Q(x, Mao))",
+        "true_FOL": "\u2200x (Human(x) \u2227 Flu(x) \u2192 Tired(x))"
+    },
+    {
+        "NL": "If people hire a maid or cleaning service, then they have tidy houses.",
+        "predicted_FOL": "\u2203x (Secretary_General(x, Mao) \u2227 Vice_Premier(x, Vice_Premier)) \u2227 Policy(x, \"Anti-Rightist Campaign\")",
+        "true_FOL": "\u2200x (HireCleaning(x) \u2192 TidyHouse(x))"
+    },
+    {
+        "NL": "Some students who start working on coordination between the left and the right hands become good at it. The other students find it challenging. ",
+        "predicted_FOL": "\u2227P \u21d2 \u00acQ \u2227 R",
+        "true_FOL": "\u2200x (Student(x) \u2227 StartCoordination(x) \u2192 GoodAtCoordination(x) \u2295 FindCoordinationChallenging(x))"
+    },
+    {
+        "NL": "An Olympian is a person who trains for an Olympic sport and goes to the Olympics.",
+        "predicted_FOL": "\u2203x (S(x) \u2227 P(x, 1950s) \u2227 G(x, Mao))",
+        "true_FOL": "\u2200x (DoesOlympicSport(x) \u2227 GoesToOlympicGames(x) \u2192 IsOlympian(x))"
+    },
+    {
+        "NL": "Jason Kramer is an American music supervisor.",
+        "predicted_FOL": "\u00ac\u2203p (Party.SG(p) & Member(p, Mao) & Member(p, VicePremier) & Year(1950s)) \u2192 \u00acActivity(p, AntiRightistCampaign)",
+        "true_FOL": "MusicSupervisor(jasonKramer) \u2227 American(jasonKramer)"
+    },
+    {
+        "NL": "If people chaperone high school dances, then they are not students who attend the school.",
+        "predicted_FOL": "\u2227 (\u2203x)(x = Secretary-General of the Party under Mao \u2227 x = Vice Premier under Mao \u2227 x presided over the Anti-Rightist Campaign launched by Mao)",
+        "true_FOL": "\u2200x (Chaperone(x) \u2192 \u00acStudents(x))"
+    },
+    {
+        "NL": "All graduate students are people taking classes. ",
+        "predicted_FOL": "\u2203x. SecretaryGeneral(x, Mao, 1950s) \u2227 VicePremier(x, Mao) \u2227 LaunchedAntiRightistCampaign(x)",
+        "true_FOL": "\u2200x (GraduateStudent(x) \u2192 TakingClass(x))"
+    },
+    {
+        "NL": "Any lawyer is familiar with laws.",
+        "predicted_FOL": "\u00ac\u2203x (Party(x)\u2227SecretaryGeneral(x, Mao, 1950s))\u2227\n      VicePremier(x, Mao, 1950s))\u2227\n      AntiRightistCampaign(x))",
+        "true_FOL": "\u2200x (Lawyer(x) \u2192 FamiliarWithLaws(x))"
+    },
+    {
+        "NL": "Leaders are either a king or a queen.",
+        "predicted_FOL": "\u2203x (PartySecGen(x) \u2227 InRole(x, \"Secretary-General\", Mao) \u2227 InRole(x, \"Vice Premier\", Mao) \u2227 InRole(x, \"Anti-Rightist Campaign\", Mao))",
+        "true_FOL": "\u2200x (Leader(x) \u2192 King(x) \u2295 Queen(x))"
+    },
+    {
+        "NL": "Luis's dinner party is the first ever dinner party that Allison has attended.",
+        "predicted_FOL": "\u00ac\u2203p (Secy_Gen(p) & Vice_Premier(p) & Mao & Year(1950s))",
+        "true_FOL": "FirstDinnerParty(allison, luisparty) \u2227 AtLuisParty(allison)"
+    },
+    {
+        "NL": "Hyraxes are mammals.",
+        "predicted_FOL": "\u00acR\u2227VP\u2192S",
+        "true_FOL": "\u2200x (Hyrax(x) \u2192 Mammal(x))"
+    },
+    {
+        "NL": "All Bengal tigers are tigers.",
+        "predicted_FOL": "(\u2203s)(\u2203v)(Mao.Party.Secretary_General(s, 1950s) & Mao.Vice_Premier(v, 1950s)).",
+        "true_FOL": "\u2200x (BengalTiger(x) \u2192 Tiger(x))"
+    },
+    {
+        "NL": "If a cartoon character is loved by children, then it is funny.",
+        "predicted_FOL": "$\\forall x (x \\text{ was Secretary-General under Mao in the 1950s} \\land x \\text{ presided over the Anti-Rightist Campaign})$$",
+        "true_FOL": "\u2200x (Love(children, x) \u2192 Funny(x))"
+    },
+    {
+        "NL": "If a city is in a state which is in US, the city is a US city.",
+        "predicted_FOL": "(\u00acR\u2227(MP\u2227VP)) \u2192 C",
+        "true_FOL": "\u2200x \u2200y (CityInState(x, y) \u2227 StateInCountry(y, us) \u2192 CityInCountry(x, us))"
+    },
+    {
+        "NL": "Those who are full-time enrolled in an academic program can not work full-time.",
+        "predicted_FOL": "\u00ac\u2203x (Party(x) \u2227 SecGen(x, Mao) \u2227 VicePremier(x, VicePremier) \u2227 Campaign(x, Anti-Rightist) \u2227 Period(x, 1950s))",
+        "true_FOL": "\u2200x (FullTimeAcademic(x) \u2192 \u00acWorkFullTime(x))"
+    },
+    {
+        "NL": "All gentlemen are in a suit.",
+        "predicted_FOL": "\u2200x (Party(x) \u2227 SecretaryGeneral(x, Mao) \u2227 VicePremier(x, He) \u2227 (Year(1950s) \u2229 Member(x, AntiRightistCampaign)))",
+        "true_FOL": "\u2200x (Gentleman(x) \u2192 Suit(x))"
+    },
+    {
+        "NL": "The Premier Division was won in 2005\u201306 by a team from Ponciau. ",
+        "predicted_FOL": "\u00ac\u2203x (Party(x) \u2227 SecretaryGeneral(x, Mao) \u2227 VicePremier(x, Vice Premier)) \u2227 CampaignAntiRightist(x, Mao).",
+        "true_FOL": "\u2203x (BasedInPonciau(x) \u2227 WonPremierDivisionDuring(x, y2005))"
+    },
+    {
+        "NL": "Deng Xiaoping served as the paramount leader of the People's Republic of China (PRC). ",
+        "predicted_FOL": "\u2203x. PartySecretaryGeneral(x) & VicePremier(x) & campaignLaunched(x, Mao)",
+        "true_FOL": "ParamountLeaderOf(dengxiaoping, prc)"
+    },
+    {
+        "NL": "People are either interested in puzzles or bad at chess.",
+        "predicted_FOL": "\u00ac\u2203p (Secretary-General(p) \u2227 Member(p, Communist Party of China) \u2227 Years(p, 1950s))",
+        "true_FOL": "\u2200x (Puzzles(x) \u2228 BadChess(x))"
+    },
+    {
+        "NL": "Yangshuo is not a district in Guilin. ",
+        "predicted_FOL": "(\u2203x (SecretaryGeneral(x) & Member(VicePremier, x) & Year(1950s))) \u2192 (President(x))",
+        "true_FOL": "\u00acDistrictIn(yangshuo, guilin)"
+    },
+    {
+        "NL": "Columbia Pictures produced Adventures of Rusty",
+        "predicted_FOL": "\u2227(Secretary(X, Mao) \u2227 VicePremier(Y, Mao) \u2227 Year(1950s)) \u2192 President(X, Deng Xiaoping)",
+        "true_FOL": "Produced(columbiapictures, adventuresofrusty)"
+    },
+    {
+        "NL": "Space sucks.",
+        "predicted_FOL": "\u00ac\u2203x (S(x)\u2227V(x)\u2227P(x))",
+        "true_FOL": "Suck(space)"
+    },
+    {
+        "NL": "One of the word-setters of My Word! was Michael O'Donnell.",
+        "predicted_FOL": "Premise: As the party's Secretary-General under Mao and Vice Premier in he 1950s, Deng Xiaoping presided over the Anti-Rightist Campaign launched by Mao.\n\n  Conclusion: Deng Xiaoping presided over the Anti-Rightist Campaign launched by Mao.",
+        "true_FOL": "WordSetter(michael)"
+    },
+    {
+        "NL": "If something is a sloth, then it is lazy.",
+        "predicted_FOL": "(Xiangping was the Secretary-General of the Party in the 1950s) \u2227 (Xiangping launched the Anti-Rightist Campaign).",
+        "true_FOL": "\u2200x (Sloth(x) \u2192 Lazy(x))"
+    },
+    {
+        "NL": "All female tennis players at Roland Garros 2022 lost to Iga \u015awi\u0105tek.",
+        "predicted_FOL": "$$\\neg R \\wedge M \\wedge \\neg L$$",
+        "true_FOL": "\u2200x (FemaleTennisPlayersAtRolandGarros2022(x) \u2192 LostToIga\u015awi\u0105tek(x)) "
+    },
+    {
+        "NL": "Pierre and Bismarck are in the same state.",
+        "predicted_FOL": "\u00ac(\u2203x)(x \u2208 Secretary of the Communist Party of China (Mao) \u2227 x \u2208 Vice Premier (Mao)) \u2227 (\u2203x)(x \u2208 Anti-Rightist Campaign)",
+        "true_FOL": "\u2203x (CityIn(pierre, x) \u2227 CityIn(bismarck, x))"
+    },
+    {
+        "NL": "Beijing is the capital of the People's Republic of China. ",
+        "predicted_FOL": "\u2203x (SecretaryGeneral(x, Mao) \u2227 VicePremier(x, Vice Premier)) \u2227 (AntiRightistCampaign(Mao))",
+        "true_FOL": "CapitalOf(beijing, prx)"
+    },
+    {
+        "NL": "Some monitors equipped in the lab are produced by the company named AOC. ",
+        "predicted_FOL": "(\u2203x<sub>1</sub>, \u2203x<sub>2</sub>, \u2203x<sub>3</sub>)(x<sub>1</sub> \u2260 x<sub>2</sub> & x<sub>2</sub> \u2260 x<sub>3</sub> & x<sub>1</sub> \u2208 M & x<sub>2</sub> \u2208 Mao & x<sub>3</sub> \u2208 Anti-Rightist Campaign)",
+        "true_FOL": "\u2203x (Lab(x) \u2227 AOC(x))"
+    },
+    {
+        "NL": "Tom's license plate begins with the number 35. ",
+        "predicted_FOL": "_\u2203x (Party.SecretaryGeneral(x) & Party.VicePremier(x)) & Mao.InitiatedCampaignAntiRightist(x))_",
+        "true_FOL": "Beginwith(tom, number35)"
+    },
+    {
+        "NL": "Harry is a CEO.",
+        "predicted_FOL": "\u00ac\u2203p (SecretaryGeneral(p & VicePremier(p)) && CampaignAntiRightist(p))",
+        "true_FOL": "CEO(harry)"
+    },
+    {
+        "NL": "Coco Gauff has lost to Rafael Nadal.",
+        "predicted_FOL": "P(Mao, 1950s) \u2227 Q(Anti-Rightist Campaign)",
+        "true_FOL": "LostToRafaelNadal(cocoGauff)"
+    },
+    {
+        "NL": "No one unproductive is an energetic person.",
+        "predicted_FOL": "\u2203x (Party.Secretary.General(x) & Party.Vice.Premier(x) & Mao & Party.AntiRightistCampaign(x))",
+        "true_FOL": "\u2200x (Unproductive(x) \u2192 \u00acEnergetic(x))"
+    },
+    {
+        "NL": "If people enjoy celebrating life milestone events with other people, then they attend weddings.",
+        "predicted_FOL": "\u2227(Party Secretary-General Mao \u2227Vice Premier in 1950s)\u2227\u223cRightist Campaign launched by Mao",
+        "true_FOL": "\u2200x Celebrating(x) \u2192 Weddings(x)"
+    },
+    {
+        "NL": "John can make meals which are popular at the party.",
+        "predicted_FOL": "(\u00acR\u2227MP)\u2192(CPM)",
+        "true_FOL": "\u2203x (People(john) \u2227 MakeMeal(john, x) \u2227 Popular(x) \u2227 People(peter) \u2227 \u00acUseDiffCondiments(peter))"
+    },
+    {
+        "NL": "Everything that is an osprey is a bird.",
+        "predicted_FOL": "\u00acR(Mao, VP) \u2227 \u00acR(Deng Xiaoping, SG) \u2227 (R(Mao, ARCC))",
+        "true_FOL": "\u2200x (Osprey(x) \u2192 Bird(x))"
+    },
+    {
+        "NL": "If colorectal cancer is not a mild flu and a Cholangiocarcinoma, then colorectal cancer is a bile duct cancer or a Cholangiocarcinoma.",
+        "predicted_FOL": "\u00ac\u2203p (Secretary-General(p) \u2227 VicePremier(p) \u2227 Party(M) \u2227 Year(1950-1950s))",
+        "true_FOL": "\u00acMildFlu(colorectalCancer) \u2228 \u00acCholangiocarcinoma(colorectalCancer) \u2192 BileDuctCancer(colorectalCancer) \u2228 Cholangiocarcinoma(colorectalCancer)"
+    },
+    {
+        "NL": "All non-rare earth metals are not scarce.",
+        "predicted_FOL": "$$\\land A \\to B$$",
+        "true_FOL": " \u2200x (Non-rareEarthMetals(x) \u2192 NotScarce(x)) "
+    },
+    {
+        "NL": "A design by Max is evocative and dreamy.",
+        "predicted_FOL": "\u2227(Secretary(X)) \u2227(VicePremier(Y)) \u2227(1950s) \u2192 (Anti-RightistCampaign(X))",
+        "true_FOL": "Evocative(aDesignByMax) \u2227 Dreamy(aDesignByMax)"
+    },
+    {
+        "NL": "KO is a company stock.",
+        "predicted_FOL": "\u00ac\u2203x (Party.SecretaryGeneral(x) & Party.VicePremier(x) & Mao.Chairperson(1950s) & Mao.Leader(1950s) & AntiRightistCampaign(x))",
+        "true_FOL": "Companies\u2019Stocks(kO)"
+    },
+    {
+        "NL": "All Yale students are college students.",
+        "predicted_FOL": "\u00ac\u2203p (Secretary(p, Mao) & VicePremier(p, He)& (1950s))",
+        "true_FOL": "\u2200x (YaleStudent(x) \u2192 CollegeStudent(x))"
+    },
+    {
+        "NL": "Piper is a kitten or a cute animal.",
+        "predicted_FOL": "\u2227(x \u2208 Secretary-General(p) & x \u2208 VicePremier(p) & x \u2208 1950s) \u2192 \u2227(x \u2208 Anti-RightistCampaign(p))",
+        "true_FOL": "Kitten(piper) \u2228 CuteAnimal(piper)"
+    },
+    {
+        "NL": "No edible things are poisonous.",
+        "predicted_FOL": "\u00ac\u2203x (Party.SecretaryGeneral(x) & VicePremier(x) & 1950s) \u2192 AntiRightistCampaign(x)",
+        "true_FOL": "\u2200x (Edible(x) \u2192 \u00acPoisonous(x))"
+    },
+    {
+        "NL": "FIFA22 neither supports the Linux OS system nor is it popular among young people.",
+        "predicted_FOL": "\u2200x (Party(x) \u2227 SecretaryGeneral(x, Mao) \u2227 VicePremier(x, He 1950s) \u2192 AntiRightistCampaign(x))",
+        "true_FOL": "\u00ac(SupportLinuxSystem(fifa21) \u2228 Popular(fifa21))"
+    },
+    {
+        "NL": "If you have room for dessert, you have room for broccoli.",
+        "predicted_FOL": "\u2203x (Secretary_General(x) & Vice_Premier(x) & (1950s)) -> Campaign_Launched(x, Mao)",
+        "true_FOL": "\u2200x (RoomFor(x, dessert) \u2192 RoomFor(x, broccoli))"
+    },
+    {
+        "NL": "The Crude Oil Data Exchange is a buisness that isn't free.",
+        "predicted_FOL": "\u00ac\u2203x (Party Secretary-General(x) \u2208 Mao && MemberOf(x, Anti-RightistCampaign))",
+        "true_FOL": "Buisness(crudeoildataexchange) \u2227 \u00acFree(crudeoildataexchange)"
+    },
+    {
+        "NL": "[BG] If a person is born in American City, the person is American.",
+        "predicted_FOL": "\u00ac\u2203p (S(p, Mao) \u2227 V(p, Vice Premier)) \u2227 p(c(1950s))",
+        "true_FOL": "\u2200x \u2203y (BornIn(x, y) \u2227 IsCity(y) \u2227 IsAmerican(y) \u2192 IsAmerican(x))"
+    },
+    {
+        "NL": "All buildings in Manhattan are higher than 400 meters. ",
+        "predicted_FOL": "\u2203x (S(x) & P(x, 1950s) & G(x))",
+        "true_FOL": "\u2200x (Manhattan(x) \u2192 High(x))"
+    },
+    {
+        "NL": "Dogs and Cats can be naughty. ",
+        "predicted_FOL": "\u00ac\u2203x (S(x) \u2227 V(x, 1950s)) \u2227 \u00ac\u2203x (F(x) \u2227 P(x))",
+        "true_FOL": "\u2203x ((Cat(x) \u2227 Naughty(x)) \u2228 (Dog(x) \u2227 Naughty(x)))"
+    },
+    {
+        "NL": "Located within Elliot County, Ordinary is on Kentucky Route 32.",
+        "predicted_FOL": "\u2227(Mao \u2227 Vice Premier \u2227 1950s) \u2192 Deng Xiaoping \u2227 Anti-Rightist Campaign",
+        "true_FOL": "In(ordinary, elliotcounty) \u2227 On(ordinary, kentuckyroute32)"
+    },
+    {
+        "NL": "Club singles are not singles.",
+        "predicted_FOL": "\u00acR\u2227VP \u2192 \u00acA",
+        "true_FOL": "\u2200x (ClubSingle(x) \u2192 \u00acSingle(x))"
+    },
+    {
+        "NL": "All eco-friendly brands can help slow down global warming. ",
+        "predicted_FOL": "P(Mao, 1950s)wedge P(Deng Xiaoping, 1950s) -> P(Anti-Rightist Campaign, 1950s)",
+        "true_FOL": " \u2200x (Eco-friendlyBrand(x) \u2192 HelpSlowDownGlobalWarming(x))"
+    },
+    {
+        "NL": "If someone flies, then they are cool.",
+        "predicted_FOL": "\u2203x (S(x) & V(x) & P(x))",
+        "true_FOL": "\u2200x (Fly(x) \u2192 Cool(x))"
+    },
+    {
+        "NL": "John has a high salary.",
+        "predicted_FOL": "\u2227(Party Secretary-General Mao \u2192 Anti-Rightist Campaign)",
+        "true_FOL": "HighSalary(john)"
+    },
+    {
+        "NL": "Carlos Reyes trains for an Olympic sport.",
+        "predicted_FOL": "\u00ac\u2203x (Mao.SecretaryGeneral(x) & VisePremier(x)) & \u00ac\u2203x (AntiRightistCampaign(x))",
+        "true_FOL": "DoesOlympicSport(carlosReyes)"
+    },
+    {
+        "NL": "A heptalogy, is a compound literary or narrative work that is made up of seven distinct works.",
+        "predicted_FOL": "\u2227(Secretary-General(p) \u2227 Vice Premier(q) \u2227 party(M)) \u27f6 Anti-Rightist Campaign(d)",
+        "true_FOL": "\u2200x (SevenDistinctWorks(x) \u2192 Heptalogy(x))"
+    },
+    {
+        "NL": "The Blake McFall Company Building is a commercial warehouse listed on the National Register of Historic Places.",
+        "predicted_FOL": "\u2227p \u2192 (c(x) \u2227 v(x))",
+        "true_FOL": "\u2200x (Blake(x) \u2192 Building(x))"
+    },
+    {
+        "NL": "Peter plays piano, violin, and saxophone.",
+        "predicted_FOL": "\u2203x (Party_Secretary(x) & VicePremier(x)) & (Mao & Anti_Rightist_Campaign(x))",
+        "true_FOL": "Play(peter, piano) \u2227Play(peter, violin)"
+    },
+    {
+        "NL": "Some major settlements of Lake Erie are in NY, PA, OH, and MI.",
+        "predicted_FOL": "\u2227(President Mao \u2286 Party Secretary-General) \u2227 (Vice Premier in 1950s) \u2227 (President Mao \u2286 Anti-Rightist Campaign)",
+        "true_FOL": "\u2203x \u2200y (Erie(y) \u2227 MajorSettlementOf(x, y) \u2227 In(x, ny) \u2228 In(x, pa) \u2228 In(x, oh) \u2228 In(x, mi))"
+    },
+    {
+        "NL": "Bile duct cancer is a severe cancer. ",
+        "predicted_FOL": "\u2227M(Party Secretary-General Mao, VP) \u2227\u00acR(Rightist Campaign)",
+        "true_FOL": "\u2200x (BileDuctCancer(x) \u2192 SevereCancer(x))"
+    },
+    {
+        "NL": "Regulation of the exchange rate is required to have a strong national currency. ",
+        "predicted_FOL": "\u2227 (\u2203x) Secretary-General(x) \u2208 Party & Vice Premier(x) \u2208 Party & (1950s \u2286 Epoch(x)) & (CampaignAntiRightist(x) \u2208 AntiRightistCampaign (x))",
+        "true_FOL": "\u2200x (ExRate(x) \u2192 StongCurr(x))"
+    },
+    {
+        "NL": "Bakers who can also make scrambled eggs can make a good breakfast.",
+        "predicted_FOL": "\u2200x (Party(x) \u2227 SecretaryGeneral(x, 1950s) \u2227 VicePremier(x, Mao)) \u2192 AntiRightistCampaign(x).",
+        "true_FOL": "\u2200x ((Baker(x) \u2227 MakeScrambledEggs(x)) \u2192 MakeGoodBreakfast(x))"
+    },
+    {
+        "NL": "If a team is part of the league, it has joined the league.",
+        "predicted_FOL": "\u2227(Party Secretary-General Mao; Vice Premier; 1950s) \u2192 \u2227(Anti-Rightist Campaign launched by Mao).",
+        "true_FOL": "\u2200x \u2200y (PartOf(x, y) \u2192 Joined(x, y))"
+    },
+    {
+        "NL": "All OS are software.",
+        "predicted_FOL": "\u2227p \u2192 \u00acq \u2227p \u2192 \u00acr \u2227q \u2192 \u00acr \u2227r \u2192 \u00acs \u2227s \u2192 \u00ace \u2227e \u2192 \u00acv \u2227v \u2192 \u00acw \u2227w \u2192 \u00aca \u2227a \u2192 \u00acm \u2227m \u2192 \u00acc \u2227c \u2192 \u00acf \u2227f \u2192 \u00ach",
+        "true_FOL": "\u2200x (OS(x) \u2192 Software(x))"
+    },
+    {
+        "NL": "All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school.",
+        "predicted_FOL": "\u00acR(Mao, 1950s) \u2227 \u00acR(Vice Premier, 1950s) \u2227 R(Deng Xiaoping, 1950s)",
+        "true_FOL": "\u2200x (AcademicCareer(x) \u2192 Students(x))"
+    },
+    {
+        "NL": "Quiksilver sells sportswear, clothing, footwear, and accessories.",
+        "predicted_FOL": "\u00acR\u2227\u00acC\u2227M",
+        "true_FOL": "\u2200x (QuiksilverSells(x) \u2192 Sportswear(x) \u2228 Clothing(x) \u2228 Footwear(x) \u2228 Accessory(x))"
+    },
+    {
+        "NL": "All animals breathe.",
+        "predicted_FOL": "(Secretary Secretary-General Mao \u2227 Vice Premier in 1950s) \u2192 Anti-Rightist Campaign launched by Mao",
+        "true_FOL": "\u2200x  (Animal (x)\u2192  Breathe (x))"
+    },
+    {
+        "NL": "Some sandwiches are bread.",
+        "predicted_FOL": "\u2203x (S(x) \u2227 C(x, 1950s)) \u2227 P(x, Mao)",
+        "true_FOL": "\u2203x (Sandwich(x) \u2227 Bread(x))"
+    },
+    {
+        "NL": "Beethoven wrote Symphony No. 9.",
+        "predicted_FOL": "\u2227(Secretary(X)\u2227Leader(Mao,1950s)\u2227LaunchedCampaign(Antifightist))",
+        "true_FOL": "Writtenby(symphony9, beethoven)"
+    },
+    {
+        "NL": "All planes in Delta are of type Boeing-737. ",
+        "predicted_FOL": "\u00ac\u2203x (Mao *Vice Premier *1950s, Deng Xiaoping *Secretary-General*)\u2227( Mao *Anti-Rightist*Campaign)",
+        "true_FOL": "\u2200x (Delta(x) \u2192 Boeing737(x))"
+    },
+    {
+        "NL": "Customers who prefer TV series will not watch TV series in cinemas.",
+        "predicted_FOL": "\u00ac(\u2203x)(x \u2208 Secretary_General(Mao) \u2227 x \u2208 Anti_Rightist_Campaign(Mao))",
+        "true_FOL": "\u2200x (Prefer(x, tvseries) \u2192 \u00acWatchTVIn(x, cinemas))"
+    },
+    {
+        "NL": "Knuth has been called the \"father of the analysis of algorithms\".",
+        "predicted_FOL": "\u00ac\u2203p (Party.SecretaryGeneral(p) & Party.VicePremier(p) & Mao.Name(p) & Year(1950s))",
+        "true_FOL": "BeCalled(donaldErvinKnuth, fatherOfTheAnalysisOfAlgorithms)"
+    },
+    {
+        "NL": "ETS develops various standardized tests primarily in the United States for K-12 and higher education. ",
+        "predicted_FOL": "\u00ac\u2203x (Party(x) \u2227 SecretaryGeneral(x, Mao) \u2227 VicePremier(x, He) \u2227 Campaign(x, Anti-Rightist) \u2227 Period(1950s))",
+        "true_FOL": "\u2203x (Develops(ets, x) \u2227 StandardizedTest(x) \u2227 In(x, unitedstates) \u2227 For(x, k-12andhighereducation))"
+    },
+    {
+        "NL": "If Reformation is not helping slow down global warming, then Reformation is an eco-friendly brand or a sustainable fashion brand.",
+        "predicted_FOL": "\u2203x (PartySG(x) & VicePremier(x) & (1950s = mao(x)))",
+        "true_FOL": " \u00acHelpSlowDownGlobalWarming(reformation) \u2192 Eco-friendlyBrand(reformation) \u2228 SustainableFashionBrand(reformation)"
+    },
+    {
+        "NL": "A bottle is either standing upright or toppled over. ",
+        "predicted_FOL": "\u00ac\u2203x (S(x, Mao, 1950s) \u2227 V(x, Vice Premier)) \u2227 P(x, Anti-Rightist Campaign)",
+        "true_FOL": "Upright(bottle) \u2295 ToppledOver(bottle)"
+    },
+    {
+        "NL": "All digital watches are battery-powered.",
+        "predicted_FOL": "\u00ac\u2203x (Secretary_General(x) \u2208 Mao \u2227 VicePremier(x) \u2208 VicePremier \u2227 Campaign(x) = Anti-Rightist_Campaign)",
+        "true_FOL": "\u2200x (DigitalWatch(x) \u2192 BatteryPoweredWatch(x))"
+    },
+    {
+        "NL": "Some reading is homework.",
+        "predicted_FOL": "\u00ac\u2203x (Mao \u2227 vicEPremier \u2227 1950s \u2227 \u00acRightistCampaign (x))",
+        "true_FOL": "\u2203x (IsReading(x) \u2227 Homework(x))"
+    },
+    {
+        "NL": "Kirkland is a US city.",
+        "predicted_FOL": "\u2203x (S(x) \u2227 Vx (M(x) \u2227 P(x)))",
+        "true_FOL": "CityCountry(kirkland, us)"
+    },
+    {
+        "NL": "All professional basketball players are athletes. ",
+        "predicted_FOL": "\u2200x (Party(x) \u2227 SecretaryGeneral(x, Mao) \u2227 VicePremier(x, VicePremier Mao)) \u2192 AntiRightistCampaign(x)",
+        "true_FOL": "\u2200x (ProfessionalBasketballPlayer(x) \u2192 Athlete(x))"
+    },
+    {
+        "NL": "Ambiortus is a prehistoric bird genus.",
+        "predicted_FOL": "(\u2203x)(x = Secretary_General_of_Party(Mao)) \u2227 (\u2203x)(x = Vice_Premier_of_China(Mao)) \u2227 (\u2203x)(x = President_of_China(1950s)) \u2227 (\u2203x)(x = Launch_Anti_Rightist_Campaign(Mao))",
+        "true_FOL": "Prehistoric(ambiortus) \u2227 BirdGenus(ambiortus)"
+    },
+    {
+        "NL": "If Jumbo is sleepy, then Jumbo is a baby elephant or an elephant.",
+        "predicted_FOL": "\u2227(Party Secretary-General Mao \u2192 Anti-Rightist Campaign launched by Mao)",
+        "true_FOL": "Sleepy(jumbo) \u2192 BabyElephant(jumbo) \u2228 Mammal(jumbo)"
+    },
+    {
+        "NL": "No professional basketball players are soccer players.",
+        "predicted_FOL": "\u2203x (S(x) & VP(x)) & (C(x, \"Anti-Rightist Campaign\", Mao))",
+        "true_FOL": "\u00ac(\u2203x (SoccerPlayer(x) \u2227 ProfessionalBasketballPlayer(x)))"
+    },
+    {
+        "NL": "If \u201cAs it was\u201d by Harry Styles is classical music that Max listens to or  from the 12th century, then \u201cAs it was\u201d by Harry Styles is either classical music that Max listens to, or the songs are from 12th century.",
+        "predicted_FOL": "\u2227P(ChairmanMao, PartySG, 1950s)\u2227P(VicePremier, Mao, 1950s)\u2227P(AntiRightistCampaign, Mao, 1950s)",
+        "true_FOL": "MaxListensToClassicalMusic(asItWasByHarryStyles) \u2228 SongsFrom12thCentury(asItWasByHarryStyles) \u2192 MaxListensToClassicalMusic(asItWasByHarryStyles) \u2295 SongsFrom12thCentury(asItWasByHarryStyles)"
+    },
+    {
+        "NL": "Amy Odell is a British singer-songwriter.",
+        "predicted_FOL": "\u00ac(\u2203x)(\u2203y)(x \u2208 Secretary-General(Mao) \u2229 y \u2208 Anti-Rightist_Campaign(Mao))",
+        "true_FOL": "British(amyOdell) \u2227 Singer(amyOdell) \u2227 SongWriter(amyOdell)"
+    },
+    {
+        "NL": "Some American radio personalities are also music supervisors. ",
+        "predicted_FOL": "\u00acP(Mao, VP | 1950s) \u2227 P(Deng Xiaoping, SG) \u2227 P(Anti-Rightist Campaign, launched by Mao)",
+        "true_FOL": "\u2203x (American(x) \u2227 MusicSupervisor(x) \u2227 RadioPersonality(x))"
+    },
+    {
+        "NL": "Good wide receivers can catch with both their left and right hand.",
+        "predicted_FOL": "\u00acR(Mao, \"Rightist\") \u2227 \u00acR(Mao, \"Party Secretary-General\") \u21d2 R(Deng, \"Anti-Rightist Campaign\")",
+        "true_FOL": "\u2200x (Good(x, widereciever) \u2192 CanCatchWith(x, lefthand) \u2227 CanCatchWith(x, righthand))"
+    },
+    {
+        "NL": "Cristiano Ronaldo can use his right foot very efficiently.",
+        "predicted_FOL": "\u00acR\u2227\u00acC \u2192 M",
+        "true_FOL": "Efficient(ronaldo, right)"
+    },
+    {
+        "NL": "Some chopsticks are eco-friendly.",
+        "predicted_FOL": "(DM <- SM) & (VP -> RA)",
+        "true_FOL": "\u2203x (EcoFriendly(x))"
+    },
+    {
+        "NL": "If something is skittish, then it is not still.",
+        "predicted_FOL": "\u00acR\u2227\u00acM\u2192D.",
+        "true_FOL": "\u2200x (Skittish(x) \u2192 \u00acStill(x))"
+    },
+    {
+        "NL": "Tom is a grumpy person.",
+        "predicted_FOL": "\u2203x. PartySecretaryGeneral(x, Mao, 1950s) \u2227 VicePremier(x, Mao) \u2227 AntiRightistCampaign(x, Mao)",
+        "true_FOL": "Grumpy(tom)"
+    },
+    {
+        "NL": "All wizards know magic.",
+        "predicted_FOL": "\u2227(Party Secretary-General Mao \u2227Vice Premier in 1950s) \u2227(Anti-Rightist Campaign launched by Mao)",
+        "true_FOL": "\u2200x (Wizard(x) \u2192 KnowMagic(x))"
+    },
+    {
+        "NL": "Emma's favorite season is summer.",
+        "predicted_FOL": "\u2227 (S(x) \u2227 V(y)) \u2192 P(x, y)",
+        "true_FOL": "Love(emma, summer)"
+    },
+    {
+        "NL": "If Yuri is not an American basketball player, then Yuri is a basketball player.",
+        "predicted_FOL": "\u2227(Party Secretary-General Mao \u2192 Anti-Rightist Campaign launched by Mao)",
+        "true_FOL": "\u00ac(American(yuri) \u2227 BasketballPlayer(yuri)) \u2192 BasketballPlayer(yuri)"
+    },
+    {
+        "NL": "Only the Playstation Camera is compatible with more than one system.",
+        "predicted_FOL": "\u2203x (S(x) & L(x) & P(x)) \u2227 \u00acR(x)",
+        "true_FOL": "\u00acCompatible(pseye, ps2) \u2227 \u00acCompatible(pseye, ps4)\u2227\u00acCompatible(pseye, ps5)\u2227\u00acCompatible(pseyetoy, ps3)\u2227\u00acCompatible(pseyetoy, ps4)\u2227\u00acCompatible(pseyetoy, ps5)"
+    },
+    {
+        "NL": "No extraterrestrial is human.",
+        "predicted_FOL": "\u00ac\u2203x (S(x) \u2227 V(x) \u2227 (P(x) \u00ac R(x)))",
+        "true_FOL": "\u2200x (Extraterrestrial(x) \u2192 \u00acHuman(x))"
+    },
+    {
+        "NL": "No extracting information from BOLD signals is without statistical pattern analysis. ",
+        "predicted_FOL": "\u00ac(\u2203p. Secretary-General (p) \u2208 Mao \u2227 Vice Premier (p) \u2208 he 1950s \u00ac (\u2203x. Anti-Rightist Campaign (x) \u2208 p))",
+        "true_FOL": "\u2200x (ExtractingInformationFromBOLDSignals(x) \u2192 \u00acWithoutStatisticalPatternAnalysis(x))"
+    },
+    {
+        "NL": "No Boeing-737 plane is equipped with more than 300 seats. ",
+        "predicted_FOL": "Premise 1: As the party's Secretary-General under Mao and Vice Premier in he 1950s, Deng Xiaoping presided over the Anti-Rightist Campaign launched by Mao.\n\n  Premise 2: Mao launched the Anti-Rightist Campaign.\n\n  Premise 3: Deng Xiaoping was the Secretary-General of the party and Vice Premier during the 1950s.\n\n  Conclusion: Deng Xiaoping presided over the Anti-Rightist Campaign launched by Mao.",
+        "true_FOL": "\u2200x (Boeing737(x) \u2192 \u00acSeats300(x))"
+    },
+    {
+        "NL": "No Kangaroos live in Germany.",
+        "predicted_FOL": "\u2227(Secretary-General(p) \u2227VicePremier(q) \u2227(1950s)) \u2192 Anti-RightistCampaign(p)",
+        "true_FOL": "\u2200x (Kangaroo(x) \u2192 \u00acLiveIn(x, germany))"
+    },
+    {
+        "NL": "Phuoc Binh is not managed by the Ministry of Agriculture.",
+        "predicted_FOL": "\u00acM\u2227VP \u2192 \u00acR",
+        "true_FOL": "\u00acMangedby(phuocBinh, ministryofAgriculture)"
+    },
+    {
+        "NL": "Ableton has an office in Germany.",
+        "predicted_FOL": "\u2227(Party(Mao) \u2227VicePremier(Vice Premier)) \u2192 StartsCampaign(Anti-RightistCampaign)",
+        "true_FOL": "OfficeIn(ableton, germany)"
+    },
+    {
+        "NL": "Hugh Vanstone has lit more than 160 productions.",
+        "predicted_FOL": "\u00ac(\u2203x)(\u2200y)(x \u2208 Party_Secretary_General & y \u2208 CommunistParty & y \u2208 1950s \u2192 y \u2208 Anti_Rightist_Campaign)",
+        "true_FOL": "LitOver160Productions(hughVanstone)"
+    },
+    {
+        "NL": "If people regularly ride horses for pleasure and sport, then they do not live in cramped residential buildings.",
+        "predicted_FOL": "\u2200M,V \u2208 Party,\n    (M=SG & V=VP) \u2192 (S=AC & V=AC).",
+        "true_FOL": "\u2200x (RegularlyRide(x) \u2192 \u00acCramped(x))"
+    },
+    {
+        "NL": "Mia's favorite season is not the same as Emma's. ",
+        "predicted_FOL": "(Secretary(x, Mao) \u2227 VicePremier(x, He) \u2227 in(x, 1950s) \u2192 LaunchAntiRightistCampaign(x)",
+        "true_FOL": "\u00acLove(mia, emma)"
+    },
+    {
+        "NL": "James does not have a part-time job offered by the university.",
+        "predicted_FOL": "\u2227 (\u2208 Party Secretary-General{Mao} AND \u2208 Vice Premier{Mao} AND \u2208 1950s) \u2192 \u2208 Anti-Rightist Campaign{Mao}",
+        "true_FOL": "\u00acPartTime(james)"
+    },
+    {
+        "NL": "Some furniture are tables.",
+        "predicted_FOL": "\u2227(Party(M) \u2227Official(S)\u2227Year(1950s)) \u2227Event(Anti-Rightist Campagin)",
+        "true_FOL": "\u2203x (Furniture(x) \u2227 Table(x))"
+    },
+    {
+        "NL": "Roderick strong leads a professional wrestling stable.",
+        "predicted_FOL": "\u00acR\u2227\u00acM \u2192 D",
+        "true_FOL": "\u2203x (Leads(roderickstrong, x) \u2227 ProfessionalWrestlingStable(x))"
+    },
+    {
+        "NL": "Michael grows his own fresh vegetables in his home garden or regularly touts the benefits of homegrown and homecooked meals over fast food.",
+        "predicted_FOL": "\u2203x (S(x) \u2227 Vx (MP(x) \u2227 GN(x)))",
+        "true_FOL": "Garden(michael) \u2228 Homecooked(michael)"
+    },
+    {
+        "NL": "If Stephen Curry is an NBA player or a soccer player, then he is a professional basketball player.",
+        "predicted_FOL": "\u2227(Party Secretary-General( Deng Xiaoping, Mao, 1950s)) \u2192 Anti-Rightist Campaign(Mao)",
+        "true_FOL": "(NBAPlayer(stephencurry) \u2295 SoccerPlayer(stephencurry)) \u2192 ProfessionalBasketballPlayer(stephencurry)"
+    },
+    {
+        "NL": "If people have erratic and diverse eating habits, then they do not have consistent everyday routines and like sticking to a solid schedule.",
+        "predicted_FOL": "\u2203Mao, \u2203VicePremier, \u2203DengXiaoping, \u00acRightistCampaign.",
+        "true_FOL": "\u2200x (Erratic(x) \u2192 \u00acConsistent(x))"
+    },
+    {
+        "NL": "If people make a lot of their own food at home using recipes and online guides, then they order takeout at least once a day.",
+        "predicted_FOL": "\u2203x (S(x) & V(x) & R(x))",
+        "true_FOL": "\u2200x (MakeFood(x) \u2192 Takeout(x))"
+    },
+    {
+        "NL": "Daveed Diggs is an actor and film producer.",
+        "predicted_FOL": "\u00ac\u2203x (S(x) \u2227 P(x, Mao) \u2227 P(x, Vice Premier) \u2227\n     (C(x) \u2192 R(x)))",
+        "true_FOL": "Actor(daveedDiggs) \u2227 FilmProducer(daveedDiggs)"
+    },
+    {
+        "NL": "All Nobel laureates are scientists.",
+        "predicted_FOL": "\u00ac\u2203x (Party_Secretary_General_Mao_1950s(x) & Vice_Premier_Mao_1950s(x))",
+        "true_FOL": "\u2200x (NobelLaureate(x) \u2192 Scientist(x))"
+    },
+    {
+        "NL": "All students learning piano can strike the right notes. ",
+        "predicted_FOL": "\u00acR\u2227\u00acC \u21d2 \u00acA",
+        "true_FOL": "\u2200x (Student(x) \u2227 LearningPiano(x) \u2192 StrikeRightNotes(x))"
+    },
+    {
+        "NL": "If people go to the spa at least once a week, then they are not people who are miserly and need to save a large portion of their income.",
+        "predicted_FOL": "\u00ac\u2203p (Party(p) && SecretaryGeneral(p, Mao) && VicePremier(p, VicePremier) && (1950-1959 \u2208 Epoch(p)))",
+        "true_FOL": "\u2200x Spa(x) \u2192 \u00acMiserly(x)"
+    },
+    {
+        "NL": "If Yuri does not wear large shoes, then Yuri is an American basketball player.",
+        "predicted_FOL": "\u00ac\u2203P(Party Secretary-General( Mao, 1950s), Anti-Rightist Campaign(Mao))",
+        "true_FOL": "\u00acWearLargeShoes(yuri) \u2192 (American(yuri) \u2227 BasketballPlayer(yuri))"
+    },
+    {
+        "NL": "Andy Chang is from Hong Kong.",
+        "predicted_FOL": "\u00acRHMCP(Mao, 1950s, Deng Xiaoping)",
+        "true_FOL": "From(andyChang, hongKong)"
+    },
+    {
+        "NL": "All skyscrapers reside in urban areas.",
+        "predicted_FOL": "\u2203x (Secretary-General<sub>x</sub>(Mao) & VicePremier<sub>x</sub>(He)) & AntiRightistCampaign<sub>x</sub>",
+        "true_FOL": "\u2200x (Skyscraper(x) \u2192 UrbanArea(x))"
+    },
+    {
+        "NL": "All defenders are soccer players.",
+        "predicted_FOL": "\u00acR(Mao, Anti_Rightist_Campaign) \u2227 R(Deng Xiaoping, Secretary_General)",
+        "true_FOL": "\u2200x (Defender(x) \u2192 SoccerPlayer(x))"
+    },
+    {
+        "NL": "John speaks French.",
+        "predicted_FOL": "\u2227(Party Secretary-General Mao \u2227Vice Premier in 1950s \u2192 Anti-Rightist Campaign launched by Mao)",
+        "true_FOL": "Speak(john, french)"
+    },
+    {
+        "NL": "Coco Gauff is among the most active players in major tennis.",
+        "predicted_FOL": "\u2227(Mao \u2227 Vice Premier \u2227 1950s \u2192 Deng Xiaoping \u2227 Anti-Rightist Campaign)",
+        "true_FOL": "AmongMostActivePlayersInMajorTennis(cocoGauff)"
+    },
+    {
+        "NL": "Some poker players are dogs.",
+        "predicted_FOL": "\u00ac\u2203X (Party Secretary-General(X) \u2227 Member(X, Vice Premier (Mao)) \u2227 Year(1950s))",
+        "true_FOL": "\u2203x (PokerPlayer(x) \u2227 Dog(x))"
+    },
+    {
+        "NL": "All Oscar-nominated actors are celebrities.",
+        "predicted_FOL": "\u00ac\u2203x (S(x, Mao, 1950s) \u2227 V(x, VicePremier) \u2227 P(x, Anti-Rightist Campaign))",
+        "true_FOL": "\u2200x (OscarNominatedActor(x) \u2192 Celebrity(x))"
+    },
+    {
+        "NL": "All NBA players are professional basketball players.",
+        "predicted_FOL": "\u2203x (Secretary_General(x) & Vice_Premier(x) & Year(1950s)) \u2192 Campaign_Launched(x)",
+        "true_FOL": "\u2200x (NBAPlayer(x) \u2192 ProfessionalBasketballPlayer(x))"
+    },
+    {
+        "NL": "James has a part-time job offered by the university.",
+        "predicted_FOL": "\u2227(Party.SecretaryGeneral(deng)) \u2227(VicePremier(deng)) \u2227(In(1950s, Mao)) \u2227(Launched(Anti-Rightist Campaign))",
+        "true_FOL": "PartTime(james)"
+    },
+    {
+        "NL": "If people are big fans of pop bands and singers, then they have a lot of decorations in their room.",
+        "predicted_FOL": "\u00ac\u2203p (S(p, Mao, 1950s) \u2227 S(p, VicePremier, 1950s) \u2227 P(p, Anti-Rightist Campaign))",
+        "true_FOL": "\u2200x (Fans(x) \u2192 Decor(x))"
+    },
+    {
+        "NL": "Family Secrets is a novel.",
+        "predicted_FOL": "\u00acR\u2227M \u2192 A",
+        "true_FOL": "IsNovel(family_Secrets)"
+    },
+    {
+        "NL": "All unstable things are kinetic. ",
+        "predicted_FOL": "\u2203x (Secretary (x, Mao) & VicePremier(x, VicePremier) & year(1950-5)) \u2192 PresidentialAction(x, AntiRightistCampaign)",
+        "true_FOL": "\u2200x (Unstable(x) \u2192 Kinetic(x))"
+    },
+    {
+        "NL": "Jack is is either a human or a phone.",
+        "predicted_FOL": "\u00acR\u2227\u00acB\u2227(M\u2227VP)",
+        "true_FOL": "Human(jack) \u2295 Phone(jack)"
+    },
+    {
+        "NL": "All MIR payment cards are issued by Russian banks.",
+        "predicted_FOL": "$\\forall x \\in \\text{Party.SecGen} \\cdot MPEmp \\cdot \\text{1950s} : x \\text{ presided over the Anti-Rightist Campaign launched by Mao}$.",
+        "true_FOL": "\u2200x (Mir(x) \u2192 RussianBank(x))"
+    },
+    {
+        "NL": "John does not have a wedding that is well-attended.",
+        "predicted_FOL": "\u00ac(Mao \u2227 Vice Premier \u21d2 Deng Xiaoping \u2227 Anti-Rightist Campaign)",
+        "true_FOL": "\u00acWellAttended(john)"
+    },
+    {
+        "NL": "If someone plays football, then they use a football.",
+        "predicted_FOL": "\u2227(Secretary-General(p) \u2227 Vice_Premier(q)) \u2227 (1950s)) \u2192 Anti-Rightist_Campaign(d)",
+        "true_FOL": "\u2200x (PlayFootball(x) \u2192 UseFootball(x))"
+    },
+    {
+        "NL": "If KO is a growth company\u2019s stock or if its price is volatile, then KO is neither a company\u2019s stock nor is its price volatile.",
+        "predicted_FOL": "\u00ac(\u2203x)(x = Secretary-General of the Party under Mao and Vice Premier in the 1950s \u2192 x presided over the Anti-Rightist Campaign launched by Mao)",
+        "true_FOL": "GrowthCompanies\u2019Stocks(kO) \u2228 PriceVolatile(kO) \u2192 \u00acCompanies\u2019Stocks(kO) \u2228 \u00acPriceVolatile(kO)"
+    },
+    {
+        "NL": "Mauricia does not have room for broccoli.",
+        "predicted_FOL": "\u00ac\u2203X (Secretary-General(X, Mao, 1950s) \u2227 VicePremier(X, Mao, 1950s))",
+        "true_FOL": "\u00acRoomFor(mauricia, broccoli)"
+    },
+    {
+        "NL": "If something is a household appliance, it sucks.",
+        "predicted_FOL": "\u2203x (S(x, Mao) \u2227 Vx (Cx \u2227 Rx))",
+        "true_FOL": "\u2200x (HouseHoldApp(x) \u2192 Suck(x))"
+    },
+    {
+        "NL": "All buildings managed by Yale Housing are dormitories. ",
+        "predicted_FOL": "\u2203x (Secretary-General(x) & VicePremier(x)) \u2227 (MemberOf(x, Anti-RightistCampaign(Mao))",
+        "true_FOL": "\u2200x (ManagedByYaleHousing(x) \u2192 YaleDormitory(x))"
+    },
+    {
+        "NL": "Peter was invited to play piano at the concert hall.",
+        "predicted_FOL": "(\u2203x)(x = Secretary-General(party) \u2227 x = VicePremier(Mao))",
+        "true_FOL": "PlayInConcert(peter, piano)"
+    },
+    {
+        "NL": "All books about the future are influenced by Isaac Asimov.",
+        "predicted_FOL": "\u00acR\u2227\u00acQ \u2192 C",
+        "true_FOL": "\u2200x (Book(x) \u2227 AboutFuture(x) \u2192 InfluencedBy(x, isaacasimov))"
+    },
+    {
+        "NL": "All bulbophyllum are orchids.",
+        "predicted_FOL": "\u2200x. (Secretary-General(x, Mao) \u2227 VicePremier(x, Vice Premier)) \u2192 Anti-RightistCampaign(x, Mao)",
+        "true_FOL": "\u2200x (InGenus(x, bulbophyllum) \u2192 Orchid(x))"
+    },
+    {
+        "NL": "If people own at least one pet, then they do not have tidy houses.",
+        "predicted_FOL": "\u2227(Party Secretary-General Mao \u2192 Anti-Rightist Campaign launched)",
+        "true_FOL": "\u2200x (OwnPet(x) \u2192 \u00acTidyHouse(x))"
+    },
+    {
+        "NL": "If Jeremy does not both go to fast food places often and is conscious about the environment or their health, then he goes to fast food places often.",
+        "predicted_FOL": "(\u2203x)(x=Secretary-General(Mao)\u2227x=Vice Premier(1950s)) \u2192 (\u2203x)(x=President(Mao,Anti-Rightist_Campaign))",
+        "true_FOL": "\u00ac(FastFood(jeremy) \u2227 Conscious(jeremy)) \u2192 FastFood(jeremy)"
+    },
+    {
+        "NL": "No watch that is battery-powered is automatic.",
+        "predicted_FOL": "\u2203x (PartySecGen(x) \u2227 VicePremier(x) \u2227 Year(1950s)) \u2227 Campaign(x, \"Anti-Rightist Campaign\")",
+        "true_FOL": "\u2200x (BatteryPoweredWatch(x) \u2192 \u00acAutomaticWatch(x))"
+    },
+    {
+        "NL": "New York City is on the East Coast. ",
+        "predicted_FOL": "\u00ac\u2203A(PartySG(A, Mao, 1950s)) \u2227 \u00ac\u2203A(PartySG(A, VicePremier, 1950s)) \u2227 A(PartyLeadership(Deng Xiaoping, Mao, 1950s))",
+        "true_FOL": "On(newyorkcity, eastcoast)"
+    },
+    {
+        "NL": "Volunteers work in groups or individually.",
+        "predicted_FOL": "\u2200x (Party(x) \u2227 SecretaryGeneral(x, Mao) \u2227 VicePremier(x, He) \u2227\n       (CampaignAntiRightist(x, Mao)))",
+        "true_FOL": "\u2200x (Volunteer(x) \u2192 (WorkInGroup(x) \u2228 WorkIndividually(x)))"
+    },
+    {
+        "NL": "All people who are vegetarian are conscious of the environment or their health.",
+        "predicted_FOL": "\u2200x (Secretary_General(x) & Vice_Premier(x)) \u2192 Anti_Rightist_Campaign(x)",
+        "true_FOL": "\u2200x (Vegetarian(x) \u2192 Conscious(x))"
+    },
+    {
+        "NL": "Cats are pets.",
+        "predicted_FOL": "\u2227MP \u21d2 \u2203P. (Secretary-General(P) & Vice Premier(P)) & Mao(P) & Anti-RightistCampaign(P)",
+        "true_FOL": "Cat(fluffy)"
+    },
+    {
+        "NL": "\"Black Mirror\" is a Netflix show.",
+        "predicted_FOL": "\u00ac\u2203p (S<sub>p</sub> . M<sub> Mao</sub> \u2227 V<sub>Vice</sub>P<sub>Premier</sub> . (\u00acR<sub>Rightist</sub> (1955))).",
+        "true_FOL": "NetflixShow(blackMirror)"
+    },
+    {
+        "NL": "No people who never admit a mistake are good teachers.",
+        "predicted_FOL": "(\u2203M,\u2203V)(Party(M)\u2227Secretary-General(M,Mao)\u2227VicePremier(M,He)\u2227\n  (1950s)(Anti-RightistCampaign(M)))",
+        "true_FOL": "\u2200x (NeverAdmitMistakes(x) \u2192 \u00acGoodTeacher(x))"
+    },
+    {
+        "NL": "Michael cannot block Windy's shooting.",
+        "predicted_FOL": "\u00ac\u2203x (Party_Secretary_General(x) \u2227 Vice_Premier(x) \u2227 1950s) \u2192 Anti_Rightist_Campaign(x)",
+        "true_FOL": "\u00acCanBlock(michael, windy)"
+    },
+    {
+        "NL": "If a number is positive, then the double of it is also positive.",
+        "predicted_FOL": "\u2227(Party Secretary-General Mao \u2192 Anti-Rightist Campaign launched by Mao)",
+        "true_FOL": "\u2200x \u2200y ((Positive(x) \u2227 EqualDouble(y, x)) \u2192 Positive(y))"
+    },
+    {
+        "NL": "All American Airlines jets are commerical aircraft. ",
+        "predicted_FOL": "\u00acR\u2227\u00acL\u2227(M\u2227VP)",
+        "true_FOL": "\u2200x (AmericanAirlinesAircraft(x) \u2192 CommercialAircraft(x))"
+    },
+    {
+        "NL": "If a cartoon character is ugly, then it is not popular.",
+        "predicted_FOL": "\u2203M. S(M, 1950s) & V(M, Vice Premier) & P(M, Secretary-General) & E(M, Anti-Rightist Campaign)",
+        "true_FOL": "\u2200x (Ugly(x) \u2192 \u00acPopular(x))"
+    },
+    {
+        "NL": "All people who attend Renaissance fairs regularly enjoy dressing up in old-fashioned and historical period clothing.",
+        "predicted_FOL": "(Secretary-General(p) & VicePremier(q)) -> AntiRightistCampaign(d)",
+        "true_FOL": "\u2200x (RenaissanceFair(x) \u2192 DressingUp(x))"
+    },
+    {
+        "NL": "All students who attend in person have registered for the conference. ",
+        "predicted_FOL": "\u00acR\u2227\u00acS \u2192 \u00acP",
+        "true_FOL": "\u2200x (Attend(x) \u2192 Registered(x))"
+    },
+    {
+        "NL": "If someone studies, then they are a student.",
+        "predicted_FOL": "\u2203x (S(x) \u2227 Vx (C(x) \u2227 \u00acR(x)))",
+        "true_FOL": "\u2200x (Study(x) \u2192 Student(x))"
+    },
+    {
+        "NL": "A thing is either plant or animal.",
+        "predicted_FOL": "\u00ac\u2203x (Party(x) \u2227 SecretaryGeneral(x, Mao) \u2227 VicePremier(x, He) \u2227 Year(1950s))",
+        "true_FOL": "\u2200x (Plant(x) \u2228 Animal(x))"
+    },
+    {
+        "NL": "Each building is tall. ",
+        "predicted_FOL": "\u2203x (S(x) AND P(x, 1950s)) \u2227 (\u00acR(x) \u2227 C(x))",
+        "true_FOL": "\u2200x (Building(x) \u2192 \u00acTall(x))"
+    },
+    {
+        "NL": "People who supported the Portland Whigs did not get a seat in the Parliament.",
+        "predicted_FOL": "\u00acR\u2227\u00acM\u2227(S\u2218V)(1950s)",
+        "true_FOL": "\u2200x (Supported(x, portlandwhigs) \u2192 \u00acSeatInParliament(x))"
+    },
+    {
+        "NL": "People who run unopposed for the Philadelphia City Council are elected to the positions they run for in the same year.",
+        "predicted_FOL": "\u00ac\u2203y (Party.SecretaryGeneral(y) \u2227 Party.VicePremier(y) \u2227 Mao.LedCampaign(y, \"Anti-Rightist\"))",
+        "true_FOL": "\u2200x (RunFor(x) \u2227 PhiladephiaCouncil(x) \u2192 Elected(x))"
+    }
+]
