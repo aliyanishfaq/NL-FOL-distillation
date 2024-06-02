@@ -1,0 +1,322 @@
+[
+    {
+        "NL": "A business strategy is successful if it increases revenue or reduces costs, but it is not successful if it harms the company's reputation or results in legal troubles.",
+        "predicted_FOL": "(Revenue > 0) OR ((Costs < 0) AND (Reputation < 0))",
+        "true_FOL": "\u2200x (BusinessStrategy(x) \u2227 (IncreasesRevenue(x) \u2228 ReducesCosts(x)) \u2227 \u00acHarmsReputation(x) \u2227 \u00acResultsInLegalTroubles(x) \u2192 Successful(x))"
+    },
+    {
+        "NL": "A person is a vegetarian if they do not eat meat, poultry, or fish.",
+        "predicted_FOL": "(\u00acA \u2227 \u00ac(MEAT \u2227 POULTRY \u2227 FISH))",
+        "true_FOL": "\u2200x (Person(x) \u2227 \u00acEatsMeat(x) \u2227 \u00acEatsPoultry(x) \u2227 \u00acEatsFish(x) \u2192 Vegetarian(x))"
+    },
+    {
+        "NL": "A recipe x is suitable for a diet y if x meets the nutritional guidelines and restrictions of y.",
+        "predicted_FOL": "(A -> B) \u2227 (B -> C)",
+        "true_FOL": "\u2200x \u2200y (Recipe(x) \u2227 Diet(y) \u2227 MeetsNutritionalGuidelines(x, y) \u2227 MeetsRestrictions(x, y) \u2192 SuitableFor(x, y))"
+    },
+    {
+        "NL": "Pens write with ink, while pencils write with graphite.",
+        "predicted_FOL": "(Pens  escrevan con tinta, mientras los l\u00e1pices escriben con grafito.)",
+        "true_FOL": "\u2200x (Pen(x) \u2192 WritesWith(x, Ink)) \u2227 (Pencil(x) \u2192 WritesWith(x, Graphite))"
+    },
+    {
+        "NL": "An electronic device is either on or off, but not in both states at the same time.",
+        "predicted_FOL": "(\u00ac(ElectronicDevice is both On and Off))",
+        "true_FOL": "\u2200x (ElectronicDevice(x) \u2192 (On(x) \u2295 Off(x)))"
+    },
+    {
+        "NL": "A building primarily used for storing and protecting vehicles is a garage.",
+        "predicted_FOL": "The first-order logic statement is: \n\n  **GV(x) \u2227 St(x) \u2227 B(x)**",
+        "true_FOL": "\u2200x (Building(x) \u2227 UsedForStoringVehicles(x) \u2227 ProtectsVehicles(x) \u2192 Garage(x))"
+    },
+    {
+        "NL": "A productive workspace has natural light, comfortable furniture, and is free from excessive noise or distractions.",
+        "predicted_FOL": "(Natural light -> Light in the workspace) \u2227 (Comfortable furniture -> Furniture is comfortable) \u2227 (Noise-free atmosphere -> No excessive noise or distractions)",
+        "true_FOL": "\u2200x (Workspace(x) \u2227 NaturalLight(x) \u2227 ComfortableFurniture(x) \u2227 \u00ac(ExcessiveNoise(x) \u2228 Distractions(x)) \u2192 Productive(x))"
+    },
+    {
+        "NL": "A detective investigates crimes by collecting evidence and interviewing witnesses.",
+        "predicted_FOL": "(A \u2227 E) \u2227 I",
+        "true_FOL": "\u2200x\u2200y (Detective(x) \u2227 Crime(y) \u2192 (CollectsEvidence(x, y) \u2227 InterviewsWitnesses(x, y)))"
+    },
+    {
+        "NL": "Mountains taller than 8,000 meters are called eight-thousanders.",
+        "predicted_FOL": "\u2200x (Mountain(x) \u2227 x > 8000 \u2192 MountainEightThousander(x))",
+        "true_FOL": "\u2200x (Mountain(x) \u2227 TallerThan(x, 8000) \u2192 EightThousander(x))"
+    },
+    {
+        "NL": "A fitness routine is effective for weight loss when it combines cardiovascular exercises with strength training and proper nutrition.",
+        "predicted_FOL": "(Cardiovascular exercises \u2227 Strength training \u2227 Proper nutrition) \u2192 Effective fitness routine for weight loss",
+        "true_FOL": "\u2200x \u2200y (FitnessRoutine(x) \u2227 CardiovascularExercises(y) \u2227 StrengthTraining(x) \u2227 ProperNutrition(y) \u2192 EffectiveForWeightLoss(x))"
+    },
+    {
+        "NL": "An element belongs to the halogen group if it has seven valence electrons, forms diatomic molecules, and is highly reactive with alkali metals.",
+        "predicted_FOL": "(H) \u2208 HalalogenGroup \u2192 \n(H) forms diatomic molecules \u2227 \n(H) reacts violently with alkali metals",
+        "true_FOL": "\u2200x (Element(x) \u2227 SevenValenceElectrons(x) \u2227 FormsDiatomicMolecules(x) \u2227 HighlyReactiveWithAlkaliMetals(x) \u2192 Halogen(x))"
+    },
+    {
+        "NL": "A wind instrument that produces sound by vibrating a reed is a reed instrument.",
+        "predicted_FOL": "(A \u00ac R) \u2192 (S)",
+        "true_FOL": "\u2200x \u2200y (WindInstrument(x) \u2227 Reed(y) \u2227 ProducesSoundByVibrating(x, y) \u2192 ReedInstrument(x))"
+    },
+    {
+        "NL": "A window can be open or closed but not both.",
+        "predicted_FOL": "(window.open == true) XOR (window.open == false)",
+        "true_FOL": "\u2200x (Window(x) \u2192 (Open(x) \u2295 Closed(x)))"
+    },
+    {
+        "NL": "A garment is classified as a dress if it is a one-piece clothing item, designed to cover the torso and legs, and typically worn by women or girls.",
+        "predicted_FOL": "(Garment(x) --> Dress(x))",
+        "true_FOL": "\u2200x (Garment(x) \u2227 OnePieceClothingItem(x) \u2227 CoversTorsoAndLegs(x) \u2227 TypicallyWornBy(x, women, girls) \u2192 Dress(x))"
+    },
+    {
+        "NL": "A building is safe if it has fire exits, functioning alarms, and regular safety inspections.",
+        "predicted_FOL": "(Building(X) -> (hasFireExits(X) AND functioningAlarms(X) AND regularSafetyInspections(X)))",
+        "true_FOL": "\u2200x (Building(x) \u2227 Safe(x) \u2194 (FireExits(x) \u2227 FunctioningAlarms(x) \u2227 RegularSafetyInspections(x)))"
+    },
+    {
+        "NL": "A landscape is deemed mountainous if it features elevated terrain, steep slopes, and significant differences in elevation between adjacent areas.",
+        "predicted_FOL": "$(\\forall P. P \\to (S \\lor T \\lor H)) \\land (H \\to S)\\land (H \\to T)$",
+        "true_FOL": "\u2200x (Landscape(x) \u2227 ElevatedTerrain(x) \u2227 SteepSlopes(x) \u2227 SignificantElevationDifferences(x) \u2192 Mountainous(x))"
+    },
+    {
+        "NL": "A device is classified as a musical instrument if it is designed to produce musical sounds through human manipulation or control.",
+        "predicted_FOL": "(device is classified as a musical instrument if it is designed to produce musical sounds through human manipulation or control)",
+        "true_FOL": "\u2200x (Device(x) \u2227 DesignedToProduceMusicalSounds(x) \u2227 HumanManipulationOrControl(x) \u2192 MusicalInstrument(x))"
+    },
+    {
+        "NL": "A baby is considered a toddler when they can walk and are between the age of 1 and 3 years.",
+        "predicted_FOL": "(\u2203x)(w(x) AND (l(x) AND (y(x) AND (1 <= x <= 3))))",
+        "true_FOL": "\u2200x (Baby(x) \u2227 CanWalk(x) \u2227 AgeBetween(x, 1, 3) \u2192 Toddler(x))"
+    },
+    {
+        "NL": "An employee is either a part-time or a full-time worker.",
+        "predicted_FOL": "(employee(x) -> (part_time(x) or full_time(x)))",
+        "true_FOL": "\u2200x (Employee(x) \u2192 (PartTime(x) \u2295 FullTime(x)))"
+    },
+    {
+        "NL": "A smartphone is a device for communication, a television is for watching shows, and a radio is for listening to broadcasts.",
+        "predicted_FOL": "(A) \u2203x (Sx \u2227 Tvx \u2227 Rx)",
+        "true_FOL": "\u2200x\u2200y\u2200z (Smartphone(x) \u2227 Television(y) \u2227 Radio(z) \u2192 (CommunicationDevice(x) \u2228 (WatchingShows(y) \u2227 ListeningToBroadcasts(z))))"
+    },
+    {
+        "NL": "A dog is considered domesticated if it has been trained to obey human commands or is a pet.",
+        "predicted_FOL": "(\u2227 (trained(x) \u2227 pet(x)))",
+        "true_FOL": "\u2200x (Dog(x) \u2227 (TrainedToObeyHumanCommands(x) \u2228 Pet(x)) \u2192 Domesticated(x))"
+    },
+    {
+        "NL": "A vehicle that operates on rails, is powered by electricity or diesel, and transports passengers or cargo is a train or a tram.",
+        "predicted_FOL": "(RailWay.vehicle operates on rails -> (Electricity || Diesel)) AND (Transportation.transports passengers || Transportation.transports cargo)",
+        "true_FOL": "\u2200x (Vehicle(x) \u2227 OperatesOnRails(x) \u2227 (PoweredByElectricity(x) \u2228 PoweredByDiesel(x)) \u2227 (TransportsPassengers(x) \u2228 TransportsCargo(x)) \u2192 (Train(x) \u2228 Tram(x)))"
+    },
+    {
+        "NL": "A scientific discovery becomes influential when it challenges existing theories, offers innovative solutions, and generates further research.",
+        "predicted_FOL": "(\u00acS \u2192 \u00acT) \u2227 (T \u2192 I) \u2227 (I \u2192 R)",
+        "true_FOL": "\u2200x\u2200y\u2200z\u2200w (ScientificDiscovery(x) \u2227 ExistingTheories(y) \u2227 InnovativeSolutions(z) \u2227 FurtherResearch(w) \u2227 Challenges(x, y) \u2227 Offers(x, z) \u2227 Generates(x, w) \u2192 Influential(x))"
+    },
+    {
+        "NL": "A decomposer breaks down dead organic material and recycles nutrients back into the ecosystem.",
+        "predicted_FOL": "(Decomposer  Breathes  Dead Organic  Material)  -> (Nutrient  Cycles  Back  to  Ecosystem)",
+        "true_FOL": "\u2200x (Decomposer(x) \u2192 (\u2203y (DeadOrganicMaterial(y) \u2227 BreaksDown(x, y) \u2227 RecyclesNutrients(x))))"
+    },
+    {
+        "NL": "A dessert is considered healthy if it contains fruits and has low sugar content.",
+        "predicted_FOL": "(Dessert(x) \u2227 ContainsFruit(x) \u2227 HasLowSugarContent(x))",
+        "true_FOL": "\u2200x (Dessert(x) \u2227 ContainsFruits(x) \u2227 LowSugarContent(x) \u2192 Healthy(x))"
+    },
+    {
+        "NL": "A computer is portable, or it is a desktop model.",
+        "predicted_FOL": "(\u00acP \u2192 Q) \u2228 (R \u2192 Q)",
+        "true_FOL": "\u2203x (Computer(x) \u2227 (Portable(x) \u2228 DesktopModel(x)))"
+    },
+    {
+        "NL": "A restaurant attracts customers when it serves delicious food and maintains a clean environment, but not if the service is consistently slow.",
+        "predicted_FOL": "(A \u2227 (F(x) \u2227 C(x))) \u2227 ~(S(x))",
+        "true_FOL": "\u2200x (Restaurant(x) \u2227 AttractsCustomers(x) \u2194 (DeliciousFood(x) \u2227 CleanEnvironment(x) \u2227 \u00acSlowService(x)))"
+    },
+    {
+        "NL": "A volcano erupts, forms from magma, and has a crater.",
+        "predicted_FOL": "(EventType(e) & Form(e, magma) & HasCrater(e))",
+        "true_FOL": "\u2200x (Volcano(x) \u2192 (Erupts(x) \u2227 FormsFromMagma(x) \u2227 HasCrater(x)))"
+    },
+    {
+        "NL": "A restaurant is popular if it serves tasty food and has a friendly atmosphere.",
+        "predicted_FOL": "(A \u2227 (T F)) \u2227 (F \u2227 (A)))",
+        "true_FOL": "\u2200x (Restaurant(x) \u2227 Popular(x) \u2192 (TastyFood(x) \u2227 FriendlyAtmosphere(x)))"
+    },
+    {
+        "NL": "A player scores a goal in a soccer match with a ball, the field, and the goalposts.",
+        "predicted_FOL": "(SoccerMatch(player, ball, goalposts) \u2227 field)",
+        "true_FOL": "\u2200x \u2200y \u2200z (Player(x) \u2227 SoccerMatch(y) \u2227 Goal(z) \u2192 (\u2203w \u2203v \u2203u (Ball(w) \u2227 Field(v) \u2227 Goalposts(u) \u2227 Score(x, y, z, w, v, u))))"
+    },
+    {
+        "NL": "A well-designed sports program fosters physical activity, cultivates teamwork, and promotes the development of essential life skills, contributing to the overall growth and development of participants.",
+        "predicted_FOL": "(P -> (A AND B AND C))",
+        "true_FOL": "\u2200x\u2200y (WellDesignedSportsProgram(x) \u2227 FostersPhysicalActivity(x) \u2227 CultivatesTeamwork(y) \u2227 PromotesDevelopmentOfEssentialLifeSkills(x) \u2192 (ContributesToOverallGrowthAndDevelopment(x)))"
+    },
+    {
+        "NL": "A square is a rectangle with equal sides, while a circle has no corners.",
+        "predicted_FOL": "(\u2200x (Rectangle(x) \u2194 Square(x))) \u2227 (\u00ac\u2203x (Corner(x)))",
+        "true_FOL": "\u2200x \u2200y (Square(x) \u2227 Circle(y) \u2192 (Rectangle(x) \u2227 EqualSides(x) \u2227 \u00acHasCorners(y)))"
+    },
+    {
+        "NL": "A magnet attracts ferromagnetic materials due to its magnetic field, which is created by the alignment of its internal atomic magnetic moments.",
+        "predicted_FOL": "$\\forall m \\in FerromagneticMaterials : A(m, B)$",
+        "true_FOL": "\u2200x (Magnet(x) \u2192 (AttractsFerromagneticMaterials(x) \u2227 DueToMagneticField(x) \u2227 CreatedByAlignmentOfInternalAtomicMagneticMoments(x)))"
+    },
+    {
+        "NL": "A planet with an atmosphere containing oxygen and water vapor can support life.",
+        "predicted_FOL": "(\u2203p (A(p) \u2227 O(p) \u2227 H2O(p)))",
+        "true_FOL": "\u2200x (Planet(x) \u2227 ContainsOxygen(x) \u2227 ContainsWaterVapor(x) \u2192 CanSupportLife(x))"
+    },
+    {
+        "NL": "A tropical fruit is ripe when its skin is brightly colored and it has a sweet aroma.",
+        "predicted_FOL": "A \u2227  (S(x) \u2227 A(x)) \u2227  O(x)",
+        "true_FOL": "\u2200x (Ripe(x) \u2194 (TropicalFruit(x) \u2227 BrightlyColoredSkin(x) \u2227 SweetAroma(x)))"
+    },
+    {
+        "NL": "A doctor diagnoses and treats illnesses, a dentist focuses on oral health, and a pharmacist dispenses prescribed medication.",
+        "predicted_FOL": "(A \u2227 (D \u2192 I)) \u2227 (P \u2192 I)",
+        "true_FOL": "\u2200x\u2200y\u2200z (Doctor(x) \u2227 Dentist(y) \u2227 Pharmacist(z) \u2192 (DiagnosesIllnesses(x) \u2227 TreatsIllnesses(x) \u2227 FocusesOnOralHealth(y) \u2227 DispensesPrescribedMedication(z)))"
+    },
+    {
+        "NL": "A place is considered a library if it is an institution that houses a collection of books, manuscripts, and other materials for reading, study, or reference, often offering lending and research services.",
+        "predicted_FOL": "$$(\\text{Place} \\text{ is Library}) \\iff (\\text{Is Institution}) \\wedge (\\text{Has Collection of Books}) \\wedge (\\text{Has Manuscripts and Other Materials}) \\wedge (\\text{Provides Lending and Research Services})$$",
+        "true_FOL": "\u2200x (Library(x) \u2194 (InstitutionHousesCollectionOfBooksManuscriptsAndOtherMaterials(x) \u2227 ForReadingStudyOrReference(x) \u2227 OffersLendingAndResearchServices(x)))"
+    },
+    {
+        "NL": "A smartphone has a camera and a touchscreen.",
+        "predicted_FOL": "(A \u2227 B) \u2194 (C \u2228 D)",
+        "true_FOL": "\u2200x (Smartphone(x) \u2192 (Camera(x) \u2227 Touchscreen(x)))"
+    },
+    {
+        "NL": "Farmers grow crops and raise livestock, selling their products at markets or to distributors.",
+        "predicted_FOL": "Sure, the first-order logic statement is:\n\n  **Farmers grow crops and raise livestock; and they sell their products at markets or to distributors.**",
+        "true_FOL": "\u2200x\u2200y\u2200z (Farmer(x) \u2227 Crop(y) \u2227 Livestock(z) \u2192 (Grows(x, y) \u2227 Raises(x, z) \u2227 (SellsAtMarket(x, y, z) \u2228 SellsToDistributor(x, y, z))))"
+    },
+    {
+        "NL": "A triangle has exactly three sides.",
+        "predicted_FOL": "\u00acA \u2192 3P",
+        "true_FOL": "\u2200x (Triangle(x) \u2192 ThreeSides(x))"
+    },
+    {
+        "NL": "In a solar system, planets revolve around a central star and are held in orbit by the gravitational forces between the star and the planets.",
+        "predicted_FOL": "\u2200star, planet: (in SolarSystem(star) \u2227 inSolarSystem(planet)) \u2192 gravitationalForce(star, planet)",
+        "true_FOL": "\u2200x\u2200y\u2200z (SolarSystem(x) \u2227 CentralStar(y) \u2227 Planet(z) \u2192 (RevolveAround(z, y) \u2227 HeldInOrbitByGravitationalForces(z, y)))"
+    },
+    {
+        "NL": "A flower may have a strong fragrance or attract pollinators.",
+        "predicted_FOL": "(A -> (F\u2227P))",
+        "true_FOL": "\u2203x (Flower(x) \u2227 (StrongFragrance(x) \u2228 AttractsPollinators(x)))"
+    },
+    {
+        "NL": "A game played with cards and not considered a board game can be poker or bridge.",
+        "predicted_FOL": "( \u00ac BoardGame(x) \u2227 PlayingWithCards(x) ) \u21d2 Poker(x) \u2228 Bridge(x)",
+        "true_FOL": "\u2200x (Game(x) \u2227 PlayedWithCards(x) \u2227 \u00acBoardGame(x) \u2192 Poker(x) \u2228 Bridge(x))"
+    },
+    {
+        "NL": "A laptop has a touchpad or a trackball, but not both.",
+        "predicted_FOL": "(Laptop has a touchpad) \u2228 (Laptop has a trackball) \u00ac (Laptop has both a touchpad and a trackball).",
+        "true_FOL": "\u2200x (Laptop(x) \u2192 (HasTouchpad(x) \u2295 HasTrackball(x)))"
+    },
+    {
+        "NL": "A team wins a game when they score more points than their opponent or their opponent is disqualified, but not both.",
+        "predicted_FOL": "(A wins(G)) \u2227 (not(O disqualified)) \u2192 (G > O.points)",
+        "true_FOL": "\u2200x \u2200y \u2200z (Team(x) \u2227 Game(y) \u2227 Opponent(z) \u2227 Win(x, y) \u2194 ((ScoreMorePoints(x, y, z) \u2295 Disqualified(z, y))))"
+    },
+    {
+        "NL": "In a school, teachers instruct students in various subjects, and administrators manage daily operations.",
+        "predicted_FOL": "\u2200teacher, admin \u2208 School (\n      teacher \u2208 Teach(teacher)\n      admin \u2208 Admin(admin)\n  )",
+        "true_FOL": "\u2200x \u2200y \u2200z (School(x) \u2227 Teacher(y) \u2227 Administrator(z) \u2192 (InstructsStudents(y, x) \u2227 ManagesOperations(z, x)))"
+    },
+    {
+        "NL": "A garment is a dress if it is a one-piece clothing item, covers the upper and lower body, and is typically worn by women.",
+        "predicted_FOL": "(G -> D) \u2227 (U\u2227L) \u2227 (W \u2227 (\u00acG))",
+        "true_FOL": "\u2200x (Garment(x) \u2227 OnePieceClothingItem(x) \u2227 CoversUpperAndLowerBody(x) \u2227 TypicallyWornByWomen(x) \u2192 Dress(x))"
+    },
+    {
+        "NL": "A computer x is obsolete if a more powerful and efficient model y is available in the market.",
+        "predicted_FOL": "(Obsolete(x) \u2194 Exists(y))",
+        "true_FOL": "\u2200x \u2203y (Computer(x) \u2227 Computer(y) \u2227 MorePowerful(y, x) \u2227 MoreEfficient(y, x) \u2192 Obsolete(x))"
+    },
+    {
+        "NL": "A table is a piece of furniture with legs and a flat surface, but it is not a chair.",
+        "predicted_FOL": "(\u00acchair(x)) \u2227 (has_legs(x) \u2227 has_flat_surface(x))",
+        "true_FOL": "\u2200x (Table(x) \u2194 (Furniture(x) \u2227 HasLegs(x) \u2227 FlatSurface(x) \u2227 \u00acChair(x)))"
+    },
+    {
+        "NL": "An item is fragile if it can break easily and is not made of metal.",
+        "predicted_FOL": "(\u00ac(BREAKING \u2227 \u00acMADE_OF_METAL))",
+        "true_FOL": "\u2200x (Item(x) \u2227 BreaksEasily(x) \u2227 \u00acMetal(x) \u2192 Fragile(x))"
+    },
+    {
+        "NL": "A building with a rooftop garden, solar panels, and efficient insulation is an eco-friendly building.",
+        "predicted_FOL": "$(B \\wedge S \\wedge I) \\rightarrow E$$",
+        "true_FOL": "\u2200x (Building(x) \u2227 RooftopGarden(x) \u2227 SolarPanels(x) \u2227 EfficientInsulation(x) \u2192 EcoFriendlyBuilding(x))"
+    },
+    {
+        "NL": "A planet orbits a star, has a spherical shape, and can possess characteristics like an atmosphere, satellites, or rings, while potentially hosting life or being uninhabitable.",
+        "predicted_FOL": "(Planet(p) \u2227 Shape(p) \u2227 HasAtmosphere(p) \u2227 HasSatellites(p) \u2227 HasRings(p)) \u2227 (HasLife(p) \u2228 IsUninhabitable(p))",
+        "true_FOL": "\u2200x (Planet(x) \u2192 (OrbitsStar(x) \u2227 SphericalShape(x) \u2227 (HasAtmosphere(x) \u2228 HasSatellites(x) \u2228 HasRings(x)) \u2227 (HostsLife(x) \u2228 Uninhabitable(x))))"
+    },
+    {
+        "NL": "A vehicle is classified as an electric vehicle if it uses one or more electric motors for propulsion and relies primarily on batteries for energy storage.",
+        "predicted_FOL": "(\u2203e)(e\u2192(M(e)\u2227B(e))) \u2227 \u00ac(M(e)\u2227B(e)\u2227R(e))",
+        "true_FOL": "\u2200x (Vehicle(x) \u2227 ElectricMotorPropulsion(x) \u2227 ReliesOnBatteries(x) \u2192 ElectricVehicle(x))"
+    },
+    {
+        "NL": "A student must pass a final exam to graduate.",
+        "predicted_FOL": "(Graduate \u2194 PassFinalExam)",
+        "true_FOL": "\u2200x (Student(x) \u2227 Graduate(x) \u2192 PassFinalExam(x))"
+    },
+    {
+        "NL": "A wooden object can be furniture, a toy, or a decoration.",
+        "predicted_FOL": "\u2203x (F(x) \u2227 L(x) \u2227 D(x))",
+        "true_FOL": "\u2200x (Wooden(x) \u2192 Furniture(x) \u2228 Toy(x) \u2228 Decoration(x))"
+    },
+    {
+        "NL": "A cup holds liquids, while a plate holds solid food.",
+        "predicted_FOL": "(A \u2227 (L \u2192 P)) \u2227 \u00ac (P \u2192 A)",
+        "true_FOL": "\u2200x\u2200y (Cup(x) \u2227 Plate(y) \u2192 (HoldsLiquids(x) \u2227 HoldsSolidFood(y)))"
+    },
+    {
+        "NL": "A computer program can solve complex problems if it uses efficient algorithms and powerful hardware.",
+        "predicted_FOL": "(Computer program uses efficient algorithms) \u2227 (Computer program uses powerful hardware) \u21d2 (Computer program can solve complex problems)",
+        "true_FOL": "\u2200x (ComputerProgram(x) \u2227 UsesEfficientAlgorithms(x) \u2227 UsesPowerfulHardware(x) \u2192 CanSolveComplexProblems(x))"
+    },
+    {
+        "NL": "A desert has low precipitation, sparse vegetation, and wide temperature variations between day and night.",
+        "predicted_FOL": "(Precipitation < 100mm) \u2227 (Vegetation = sparse) \u2227 (Temperature-Day > Temperature-Night)",
+        "true_FOL": "\u2200x (Desert(x) \u2194 (LowPrecipitation(x) \u2227 SparseVegetation(x) \u2227 \u2200y\u2200z (WideTemperatureVariations(x, y, z) \u2227 Day(y) \u2227 Night(z))))"
+    },
+    {
+        "NL": "A painting is striking if it has vivid colors and a unique style, but it's not overly simplistic or overly complex.",
+        "predicted_FOL": "(Painting(x)) \u2227 (has_vivid_colors(x)) \u2227 (has_unique_style(x)) \u2227 not (is_overly_simple(x)) \u2227 not (is_overly_complex(x))",
+        "true_FOL": "\u2200x (Painting(x) \u2227 Striking(x) \u2194 (VividColors(x) \u2227 UniqueStyle(x) \u2227 \u00acOverlySimplistic(x) \u2227 \u00acOverlyComplex(x)))"
+    },
+    {
+        "NL": "If a person is a dentist, they treat teeth and oral health issues.",
+        "predicted_FOL": "(P -> Q)",
+        "true_FOL": "\u2200x (Dentist(x) \u2192 TreatsTeethAndOralHealth(x))"
+    },
+    {
+        "NL": "A solar eclipse occurs when the moon passes between the sun and the Earth, causing the sun to be partially or completely obscured.",
+        "predicted_FOL": "(P(sun, moon, earth)) \u2227 (\u00ac(P(sun, earth)) \u2227 (P(moon, sun))",
+        "true_FOL": "\u2200x (SolarEclipse(x) \u2194 (MoonPassesBetweenSunAndEarth(x) \u2227 (PartiallyObscuresSun(x) \u2228 CompletelyObscuresSun(x))))"
+    },
+    {
+        "NL": "A musical note can be a whole note, half note, quarter note, or eighth note.",
+        "predicted_FOL": "(A \u2228 B \u2228 C \u2228 D)",
+        "true_FOL": "\u2200x (MusicalNote(x) \u2192 (WholeNote(x) \u2295 HalfNote(x) \u2295 QuarterNote(x) \u2295 EighthNote(x)))"
+    },
+    {
+        "NL": "Sustainable architecture incorporates energy-efficient design, eco-friendly materials, and innovative construction techniques to minimize environmental impact and promote green living.",
+        "predicted_FOL": "(Sustainable architecture \u2227 energy-efficient design \u2227 eco-friendly materials \u2227 innovative construction techniques) \u2192 minimize environmental impact \u2227 promote green living.",
+        "true_FOL": "\u2200x\u2200y (SustainableArchitecture(x) \u2227 EnergyEfficientDesign(x) \u2227 EcoFriendlyMaterials(y) \u2227 InnovativeConstructionTechniques(x) \u2192 (MinimizesEnvironmentalImpact(x) \u2227 PromotesGreenLiving(x)))"
+    },
+    {
+        "NL": "Owning a dog requires regular exercise and grooming, while owning a cat typically involves less maintenance and more independence.",
+        "predicted_FOL": "Owning a dog requires regular exercise and grooming, while owning a cat typically involves less maintenance and more independence.",
+        "true_FOL": "\u2200x \u2200y (OwnsDog(x) \u2227 OwnsCat(y) \u2192 (RequiresExercise(x) \u2227 RequiresGrooming(x) \u2227 \u00acRequiresLessMaintenance(x) \u2227 \u00acMoreIndependence(x)) \u2227 (\u00acRequiresExercise(y) \u2227 \u00acRequiresGrooming(y) \u2227 RequiresLessMaintenance(y) \u2227 MoreIndependence(y)))"
+    }
+]

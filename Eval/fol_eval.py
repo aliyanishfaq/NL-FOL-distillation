@@ -47,7 +47,7 @@ def load_data(file_path):
     return data
 
 # Load the dataset
-data = load_data('combined_data.json')
+data = load_data('combined_data_corrected_11k.json')
 
 
 

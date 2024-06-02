@@ -1,0 +1,877 @@
+[
+    {
+        "NL": "Mary can get from New Haven to New York City either by train or car.",
+        "predicted_FOL": "\u2203x (T(x, New Haven) \u2227 C(x, New York City))",
+        "true_FOL": "Train(mary) \u2295 Car(mary)"
+    },
+    {
+        "NL": "All MIR payment cards are issued by Russian banks.",
+        "predicted_FOL": "\u2200p (MIR(p) \u2192 issuer(p, \"Russia\"))",
+        "true_FOL": "\u2200x (Mir(x) \u2192 RussianBank(x))"
+    },
+    {
+        "NL": "Olivia either prefers warm temperature or prefers cool temperature.",
+        "predicted_FOL": "$\\lnot (x \\land x')$",
+        "true_FOL": "\u2200x (PrefersWarmAt(olivia, x) \u2228 PrefersCoolAt(olivia, x))"
+    },
+    {
+        "NL": "If people are highly acclaimed in their profession, then they often receive glowing feedback and recommendations from their colleagues.",
+        "predicted_FOL": "(P \\to (Q \\land R)\\)",
+        "true_FOL": "\u2200x (Acclaimed(x) \u2192 Glowing(x))"
+    },
+    {
+        "NL": "David Ha'ivri is a political strategist. ",
+        "predicted_FOL": "(David Ha'ivri (p))",
+        "true_FOL": "PoliticalStrategist(davidhaivri)"
+    },
+    {
+        "NL": "All events are sad.",
+        "predicted_FOL": "\u00acEvents \u2192 \u00acSad.",
+        "true_FOL": "\u2200x (Event(x) \u2192 Sad(x))"
+    },
+    {
+        "NL": "Rangers won the cup in 2014 final.",
+        "predicted_FOL": "R won the cup in 2014.",
+        "true_FOL": "WonCup(rangers, twentyfourteen)"
+    },
+    {
+        "NL": "Iron man is on.",
+        "predicted_FOL": "Iron man is on.",
+        "true_FOL": "Movie(ironman)"
+    },
+    {
+        "NL": "Broccoli and asparagus are both vegetables.",
+        "predicted_FOL": "$\\forall x, y ( Broccoli(x) & Asparagus(y) )$$",
+        "true_FOL": "Vegetable(broccoli) \u2227 Vegetable(asparagus)"
+    },
+    {
+        "NL": "No employees working in this company are from China. ",
+        "predicted_FOL": "\u00ac\u2203E \u2208 Company | E = China",
+        "true_FOL": "\u2200x (WorkInCompany(x) \u2192 \u00acFromChina(x))"
+    },
+    {
+        "NL": "A person is either a Grand Slam champion or an Oscar-nominated actor.",
+        "predicted_FOL": "(\u2203x)(Ax \u2192 (Ax \u2228 Ox))",
+        "true_FOL": "\u2200x (GrandSlamChampion(x) \u2295 OscarNominatedActor(x))"
+    },
+    {
+        "NL": "If someone is from Mars, then they are aliens.",
+        "predicted_FOL": "\u00ac(person(x) \u2227 from_mars(x)) \u2192 aliens(x)",
+        "true_FOL": "\u2200x (FromMars(x) \u2192 Alien(x))"
+    },
+    {
+        "NL": "Museum of Modern Art (MoMA) is a museum if NYC. ",
+        "predicted_FOL": "\u2200x (Museum of Modern Art(x) \u2227 x \u2208 NYC).",
+        "true_FOL": "Museum(museumofModernArt) \u2227 InNYC(museumofModernArt)"
+    },
+    {
+        "NL": "Tom is an Ocellated wild turkey.",
+        "predicted_FOL": "\u2200x (IsOcellated(x) \u2227 IsWildTurkey(x))",
+        "true_FOL": "Ocellated(tom)"
+    },
+    {
+        "NL": "Wasserburg am Inn is in Germany.",
+        "predicted_FOL": "\u00acWasserburg \u2208 Germany",
+        "true_FOL": "LocatedIn(wasserbAmInn, germany)"
+    },
+    {
+        "NL": "Chemical Endangerment is harmful. ",
+        "predicted_FOL": "\u00acChemical_Endangerment \u2192 Harmful.",
+        "true_FOL": "\u2200x (ChemicalEndangerment(x) \u2192 Harmful(x))"
+    },
+    {
+        "NL": "Ralph Hammerthaler is a German writer.",
+        "predicted_FOL": "$\\lforall x (x \\text{ is a German citizen} \\rightarrow x \\text{ is a writer})$",
+        "true_FOL": "Writer(ralphHammerthaler)"
+    },
+    {
+        "NL": "No payment cards issued by Russian banks can be used with ApplePay.",
+        "predicted_FOL": "\u00ac(\u2200p. (p \u2208 R \u2227 p \u2208 AP) \u2192 \u00acp)",
+        "true_FOL": "\u2200x (RussianBank(x) \u2192 \u00acApplePay(x))"
+    },
+    {
+        "NL": "No professional tennis umpires are professional tennis players.",
+        "predicted_FOL": "\u00acP \u2192 \u00acC",
+        "true_FOL": "\u2200x (ProfessionalTennisUmpire(x) \u2192 \u00acProfessionalTennisPlayer(x))"
+    },
+    {
+        "NL": "Dommartin is situated on the Paris\u2013Lille railway. ",
+        "predicted_FOL": "\u00acDommartin \u2208 Paris \u2013 Lillerailway",
+        "true_FOL": "Situate(dommartin, pairsLille)"
+    },
+    {
+        "NL": "Sadollah fought Akiyama at UFC Fight Night.",
+        "predicted_FOL": "\u00acSadollah \u2227 Akiyama (UFC Fight Night)",
+        "true_FOL": "Event(uFCFightNight) \u2192 Fight(sadollah, akiyama)"
+    },
+    {
+        "NL": "Any two contiguous stations are on the same railway.",
+        "predicted_FOL": "$\\forall x, y (x \\in Station \\land y \\in Station \\rightarrow x = y)$",
+        "true_FOL": "\u2200x \u2200y \u2200z ((Situate(x, z) \u2227 (Precede(x, y) \u2228 Precede(y, x))) \u2192 Situate(y, z))"
+    },
+    {
+        "NL": "Fido is a penguin or a swimmer.",
+        "predicted_FOL": "\u00acFido \u2208 (Penguin \u2228 Swimmer)",
+        "true_FOL": "Penguin(fido) \u2228 Swimmer(fido)"
+    },
+    {
+        "NL": "All people who study are students.",
+        "predicted_FOL": "\u2200x (Sx \u2192 x)",
+        "true_FOL": "\u2200x (Study(x) \u2192 Student(x))"
+    },
+    {
+        "NL": "Edwin Smith was a sergeant who served with the New Zealand 24th battalion in Italy and Egypt.",
+        "predicted_FOL": "(E \\wedge (S(e) \\wedge (B(e, i) \\wedge B(e, i))\\)",
+        "true_FOL": "Sergeant(edwinsmith) \u2227 ServedWith(edwinsmith, newzealand24thbattalion) \u2227 ServedIn(edwinsmith, italy) \u2227 ServedIn(edwinsmith, egypt)"
+    },
+    {
+        "NL": "The 2008 Summer Olympics were the second Summer Olympic Games to be held in a communist state.",
+        "predicted_FOL": "\u00ac(2008 Summer Olympics was the first Summer Olympic Games to be held in a communist state)",
+        "true_FOL": "SecondToBe(summer2008olympics, heldincommuniststate)"
+    },
+    {
+        "NL": "If an animal has legs, then it jumps.",
+        "predicted_FOL": "\u00ac\u2203x (Animal(x) \u2227 HasLegs(x)) \u2192 Jump(x)",
+        "true_FOL": "\u2200x (HaveLegs(x) \u2192 Jump(x))"
+    },
+    {
+        "NL": "Hulu is a goat or a human.",
+        "predicted_FOL": "\u00ac(Hulu is a goat) \u2228 \u00ac(Hulu is a human)",
+        "true_FOL": "Goat(hulu) \u2228 Human(hulu)"
+    },
+    {
+        "NL": "George is either a commuter or has a home office setup.",
+        "predicted_FOL": "\u00ac(George is both a commuter and has a home office setup)",
+        "true_FOL": "Commuter(george) \u2295 HomeOffice(george)"
+    },
+    {
+        "NL": "If people value quality manufacturing and luxury items, then they enjoy shopping for materialistic items in their free time.",
+        "predicted_FOL": "\u2227 (value(x) \u2227 luxury(x)) \u21d2 enjoy_shopping(x)",
+        "true_FOL": "\u2200x Luxury(x) \u2192 Shopping(x)"
+    },
+    {
+        "NL": "Jake32 is either a Boeing-737 plane or a plane in Delta. ",
+        "predicted_FOL": "\u00ac(Jake32 = Boeing-737) \u2228 \u00ac(Jake32 = Delta)",
+        "true_FOL": "Boeing737(jake32) \u2295 Delta(jake32) "
+    },
+    {
+        "NL": "Ailton Silva was loaned out to a football club.",
+        "predicted_FOL": "\u2227p(Ailton Silva, footballer(X))\n  \u2227q(Ailton Silva, wasLoanedOut(X, aFootballClub))",
+        "true_FOL": "\u2203x (FootballClub(x) \u2227 LoanedTo(ailtonsilva, x))"
+    },
+    {
+        "NL": "The Legend of Zelda is not in the Top 10 list.",
+        "predicted_FOL": "\u00ac(Legend of Zelda in Top 10 list)\n  \u00ac(The Legend of Zelda is in the Top 10 list)",
+        "true_FOL": "\u00acTop10(thelegendofzelda)"
+    },
+    {
+        "NL": "White Sulphur Springs and Butte are cities in the same state.",
+        "predicted_FOL": "\u00ac(W(White Sulphur Springs) \u2227 B(Butte))",
+        "true_FOL": "\u2203x (CityIn(whitesulphursprings, x) \u2227 CityIn(butte, x))"
+    },
+    {
+        "NL": "James watches TV series in cinemas. ",
+        "predicted_FOL": "\u2203C. (C \u2227 C' \u2208 Cinemas)",
+        "true_FOL": "WatchTVInCinema(james)"
+    },
+    {
+        "NL": "No people that are good with pets are scared of animals.",
+        "predicted_FOL": "\u00ac(\u2203x) (P(x) AND G(x)) \u2192 S(x)",
+        "true_FOL": "\u2200x (GoodWithPets(x) \u2192 \u00acScaredOfAnimals(x))"
+    },
+    {
+        "NL": "The last heavy cruiser to enter service was the USS Salem.",
+        "predicted_FOL": "\u00ac\u2203HeavyCruiser(x) \u2227 HeavyCruiser(Salem) \u2227 x \u2208 Service",
+        "true_FOL": "LastHeavyCruiserToEnterService(usssalem)"
+    },
+    {
+        "NL": "All woodware is dispensable.",
+        "predicted_FOL": "$\\forall x (x \\text{ is wooden} \\to x \\text{ is dispensable})$",
+        "true_FOL": "\u2200x (Woodware(x) \u2192 Dispensable(x))"
+    },
+    {
+        "NL": "Humans are mammals.",
+        "predicted_FOL": "^(\u2200x)(IsHuman(x) \u2192 Mammal(x))",
+        "true_FOL": "\u2200x (Human(x) \u2192 Mammal(x))"
+    },
+    {
+        "NL": "Kirkland is a US city.",
+        "predicted_FOL": "\u00acCity(Kirkland)",
+        "true_FOL": "CityCountry(kirkland, us)"
+    },
+    {
+        "NL": "All four-sided things are shapes. ",
+        "predicted_FOL": "\u2200x (4x \u2192 Shape(x))",
+        "true_FOL": "\u2200x (FourSides(x) \u2192 IsShape(x))"
+    },
+    {
+        "NL": "The winner of the Premier Division in 2009\u201310 was promoted back to the Cymru Alliance.",
+        "predicted_FOL": "(W(x) \u2227 C(y, 2009\u201310)) \u2192 B(y, Cymru Alliance)",
+        "true_FOL": "\u2200x (WonPremierDivisionDuring(x, y2009) \u2192 Promoted(x))"
+    },
+    {
+        "NL": "All animals are either vertebrates or invertebrates.",
+        "predicted_FOL": "Universal quantification: \u2200x (IsAnimal(x) \u2192 (IsVertebrate(x) \u2228 IsInvertebrate(x)))",
+        "true_FOL": "\u2200x (Animal(x) \u2192 Invertebrate(x) \u2295 Vertebrate(x))"
+    },
+    {
+        "NL": "The Legend of Zelda sold more than one million copies.",
+        "predicted_FOL": "\u00ac(LZW \u2264 1000000)",
+        "true_FOL": "SellsMoreThan(thelegendofzelda, onemillioncopies)"
+    },
+    {
+        "NL": "All Yale dormitories are located on York Street. ",
+        "predicted_FOL": "\u2227P(d|y) \u2192 P(d|x)",
+        "true_FOL": "\u2200x (YaleDormitory(x) \u2192 InYorkStreet(x))"
+    },
+    {
+        "NL": "No road is clean.",
+        "predicted_FOL": "\u00acRoadClean",
+        "true_FOL": "\u2200x (Road(x) \u2192 \u00acClean(x))"
+    },
+    {
+        "NL": "Everyone from Earth is a human.",
+        "predicted_FOL": "~Human(x) \u2227 x \u2208 Earth.",
+        "true_FOL": "\u2200x (FromEarth(x) \u2192 Human(x))"
+    },
+    {
+        "NL": "Everyone who works from home has a relaxed schedule.",
+        "predicted_FOL": "\u00ac(\u2200w \u2208 HomeWorks(w)) (w \u2208 HomeWorks(w) \u2192 w \u2208 RelaxedSchedule)",
+        "true_FOL": "\u2200x (FromHome(x) \u2192 Relaxed(x))"
+    },
+    {
+        "NL": "People who spend a lot of money at casinos and other betting games have a lot of disposable income to spend.",
+        "predicted_FOL": "\u2200x (P(x) \u2227 Q(x)) \u2192 R(x)**",
+        "true_FOL": "\u2200x (Casinos(x) \u2192 DisposableIncome(x))"
+    },
+    {
+        "NL": "The fictional Mede Empire is where Thick as Thieves is set.",
+        "predicted_FOL": "\u00ac(Thicc \u2227 Thieves)",
+        "true_FOL": "Fictional(medeempire) \u2227 SetIn(thickastheives, medeempire)"
+    },
+    {
+        "NL": "If Tom is not a grumpy person and mean to animals, then Tom is neither a grumpy person nor an Animal Lover.",
+        "predicted_FOL": "\u00acGrumpy(Tom) \u2227 mean_to(Tom, animals) \u21d2 \u00acgrumpy(Tom) \u2227 \u00acanimal_lover(Tom)",
+        "true_FOL": "\u00ac(Grumpy(tom) \u2227 Mean(tom)) \u2192 \u00ac(Grumpy(tom) \u2228 AnimalLover(tom))"
+    },
+    {
+        "NL": "Writers create innovative ideas.",
+        "predicted_FOL": "\u00ac Writers(x) \u2227 Innovate(x)",
+        "true_FOL": "\u2200x (Writer(x) \u2192 CreateInnovativeIdea(x))"
+    },
+    {
+        "NL": "If people are fascinated by the history of the Renaissance and other past eras, then they attend Renaissance fairs regularly.",
+        "predicted_FOL": "$$\\neg P \\wedge (H_R \\wedge C_{Re}) \\rightarrow C_R$$",
+        "true_FOL": "\u2200x (HistoryRenaissance(x) \u2192 RenaissanceFair(x))"
+    },
+    {
+        "NL": "If people work in student jobs on campus, then they need to earn money to help pay for their college tuition.",
+        "predicted_FOL": "\u2227q\u2192p\u2227s",
+        "true_FOL": "\u2200x (StudentJobs(x) \u2192 Tuition(x))"
+    },
+    {
+        "NL": "All goldfish are carp.",
+        "predicted_FOL": "\u00ac(Goldfish \u2227 Carp).",
+        "true_FOL": "\u2200x (Goldfish(x) \u2192 Carp(x))"
+    },
+    {
+        "NL": "Everyone that uses a football can throw a football.",
+        "predicted_FOL": "(\u2200x) (x uses a football -> x can throw a football)",
+        "true_FOL": "\u2200x (UseFootball(x) \u2192 ThrowFootball(x))"
+    },
+    {
+        "NL": "All Leetcode problems that are recommended to novices are easy. ",
+        "predicted_FOL": "\u2200x (L(x) \u2227 R(x) \u2192 E(x))",
+        "true_FOL": "\u2200x (Recommended(x) \u2192 Easy(x))"
+    },
+    {
+        "NL": "No bakery is spicy.",
+        "predicted_FOL": "\u00acBaryerB",
+        "true_FOL": "\u2200x (Bakery(x) \u2192 \u00acSpicy(x))"
+    },
+    {
+        "NL": "If a language model is used by some researchers, it is popular. ",
+        "predicted_FOL": "\u00ac(\u00acL\u03bcR) \u2192 P",
+        "true_FOL": "\u2200x (UsedBySomeResearchers(x) \u2192 Popular(x))"
+    },
+    {
+        "NL": "If Rock is not both a turtle and a squirrel, then Rock is either cute or skittish.",
+        "predicted_FOL": "\u2227\u00ac(Rock = turtle \u2227 Rock = squirrel) \u2192 (Rock = cute \u2228 Rock = skittish)",
+        "true_FOL": "\u00ac(Turtle(rock) \u2227 Squirrel(rock)) \u2192 Cute(rock) \u2295 Skittish(rock)"
+    },
+    {
+        "NL": "All toddlers are kids.",
+        "predicted_FOL": "Formula: \u2200t \u2208 Toddler \u2229 Kid.",
+        "true_FOL": "\u2200x (Toddler(x) \u2192 Kid(x))"
+    },
+    {
+        "NL": "Many of Beijing's 91 universities consistently rank among the best in the Asia-Pacific and the world.",
+        "predicted_FOL": "\u2203U \u2208 City(Beijing) \u2203U' \u2208 University(U) (U' \u2208 University(U) & (U' \u2208 AsiaPacificUniversityRank(U') & (U' \u2208 WorldUniversityRank(U')))",
+        "true_FOL": "\u2203x (BeijingUniversity(x) \u2227 ConsistentlyRankAmongTheBest(x))"
+    },
+    {
+        "NL": "Unsanctioned buisnesses are free.",
+        "predicted_FOL": "\u00ac (Bussiness is guarded)",
+        "true_FOL": "\u2200x (Buisness(x) \u2227 \u00acSanctioned(x) \u2192 Free(x))"
+    },
+    {
+        "NL": " John submitted his resume to Google and got a job there.",
+        "predicted_FOL": "\u00acJohn \u2228 \u00acGoogle \u2192 job(John)",
+        "true_FOL": "CV(john, google) \u2227 Employed(john, google)"
+    },
+    {
+        "NL": "Breast cancer is neither having a cold nor a malignant tumor (exclusive).",
+        "predicted_FOL": "\u00ac(has_cold \u2227 \u00achas_malignant_tumor)",
+        "true_FOL": "\u00ac(HavingACold(breastCancer) \u2295 MalignantTumor(breastCancer))"
+    },
+    {
+        "NL": "Seattle is on the West Coast. ",
+        "predicted_FOL": "\u00acCity(Seattle) \u2227 Region(West Coast)",
+        "true_FOL": "On(seattle, westcoast)"
+    },
+    {
+        "NL": "The Harry Potter series consists of 7 distinct works.",
+        "predicted_FOL": "\u00acx \u2227 (x \u2208 {1, 2, 3, 4, 5, 6, 7})",
+        "true_FOL": "SevenDistinctWorks(harryPotter)"
+    },
+    {
+        "NL": "Customers who prefer TV series more and will not watch TV series in cinemas.",
+        "predicted_FOL": "\u2203x (x prefers TV series to movies and x does not watch movies in cinemas).",
+        "true_FOL": "\u2200x (PreferTVSeries(x) \u2192 \u00acWatchTVInCinema(x))"
+    },
+    {
+        "NL": "If people live in the suburbs, then they have tidy houses.",
+        "predicted_FOL": "\u00acLive(x) \u2227 Suburb(x) \u2192 Clean(x)",
+        "true_FOL": "\u2200x (Suburbs(x) \u2192 ChildhoodPet(x))"
+    },
+    {
+        "NL": "A U.S government official is either conservative or a Republican.",
+        "predicted_FOL": "$\\text{A U.S government official is either conservative or a Republican}$",
+        "true_FOL": " Conservative(anU.SGovernmentOfficial) \u2295 Republicans(anU.SGovernmentOfficial)"
+    },
+    {
+        "NL": "If someone is not a gentlemen, then he is not nice.",
+        "predicted_FOL": "$\\neg G \\rightarrow \\neg N$",
+        "true_FOL": "\u2200x (\u00acGentleman(x) \u2192 \u00acNice(x))"
+    },
+    {
+        "NL": "Jason Kramer is an American music supervisor.",
+        "predicted_FOL": "*J(Jason Kramer)\u2227N(American)*\u2227S(music supervisor)*",
+        "true_FOL": "MusicSupervisor(jasonKramer) \u2227 American(jasonKramer)"
+    },
+    {
+        "NL": "Sid is not either an energetic person or a sloth.",
+        "predicted_FOL": "\u00ac(Sid \u2227 (EnergeticPerson \u2228 Sloth))",
+        "true_FOL": "\u00acEnergetic(sid) \u2228 Sloth(sid)"
+    },
+    {
+        "NL": "All people who are respected by others are people who contribute to the country. ",
+        "predicted_FOL": "$\\forall x, y \\ (R(x, y) \\ -> C(x))$",
+        "true_FOL": "\u2200x (Respected(x) \u2192 ContributeToCountry(x))"
+    },
+    {
+        "NL": "Both Columbia University and New York University are located in Manhattan.",
+        "predicted_FOL": "\u00ac(Columbia University \u2229 New York University \u2208 Manhattan)",
+        "true_FOL": "Manhattan(columbiaUniversity) \u2227 Manhattan(nyc)"
+    },
+    {
+        "NL": "Pierre de Rigaud de Vaudreuil built Fort Carillon.",
+        "predicted_FOL": "\u2203x. Pierre de Rigaud de Vaudreuil built Fort Carillon(x)",
+        "true_FOL": "Built(pierrederigauddevaudreuil, fortcarillon)"
+    },
+    {
+        "NL": "If people do not live at home regularly, then they do not develop strong bonds with their family members.",
+        "predicted_FOL": "\u2227\u00ac\u2203x (L(x) \u2227 \u00acH(x))",
+        "true_FOL": "\u2200x (NotHome(x) \u2192 \u00acStrongBonds(x))"
+    },
+    {
+        "NL": "A person likes Spain as their favorite country or likes eating cheese.",
+        "predicted_FOL": "\u00acA \u2228 \u00acB",
+        "true_FOL": "\u2200x (SpainFav(x) \u2228 Cheese(x))"
+    },
+    {
+        "NL": "Some movies are filmed in New York.",
+        "predicted_FOL": "$\\exists x \\in \\text{Movies} \\text{ such that } x \\text{ is filmed in New York}$$",
+        "true_FOL": "\u2203x (FilmedIn(x, newYork))"
+    },
+    {
+        "NL": "If a person is the leader of a country for life, that person is in a monarchy. ",
+        "predicted_FOL": "\u00ac\u2203x (Leader(x) \u2227 Monarch(x))",
+        "true_FOL": "\u2200x (Leader(x) \u2192 InMonarchy(x))"
+    },
+    {
+        "NL": "If a class has no prerequisites, then the student can take the class",
+        "predicted_FOL": "\u2200x (C(x) \u2192 T(x) C(x) & T(x) \u00acC(x) \u2228 \u00acT(x)",
+        "true_FOL": "\u2200x \u2200y (\u00acPrereq(x, y) \u2192 CanTake(y))"
+    },
+    {
+        "NL": "Paolo Roversi uses Roversi as a surname.",
+        "predicted_FOL": "\u00ac\u2203y (Person(Paolo Roversi) \u2227 Appell(y, Roversi))",
+        "true_FOL": "UseAsSurname(paolo, roversi)"
+    },
+    {
+        "NL": "If Reformation is not helping slow down global warming, then Reformation is an eco-friendly brand or a sustainable fashion brand.",
+        "predicted_FOL": "\u00acR \u2208 Eco-friendly \u2228 \u00acR \u2208 SustainableFashion",
+        "true_FOL": " \u00acHelpSlowDownGlobalWarming(reformation) \u2192 Eco-friendlyBrand(reformation) \u2228 SustainableFashionBrand(reformation)"
+    },
+    {
+        "NL": "Fort Ticonderoga is the current name for Fort Carillon.",
+        "predicted_FOL": "\u00acFort Ticonderoga = Fort Carillon",
+        "true_FOL": "CurrentName(fortticonderoga, fortcarillon)"
+    },
+    {
+        "NL": "Oxford Circus is the entrance to Oxford Circus tube station which is a part of the Central line in 1900.",
+        "predicted_FOL": "\u00ac(\u2203x)(O(x)\u2227\u2208(O(x), Ox))",
+        "true_FOL": "CentralLine(oxfordCircus)"
+    },
+    {
+        "NL": "Nothing that barks is lovely. ",
+        "predicted_FOL": "\u00ac\u2203x (x \u2208 Animal && x \u2208 Bark && x \u2208 Lovely)",
+        "true_FOL": "\u2200x (Bark(x) \u2192 \u00acLovely(x))"
+    },
+    {
+        "NL": "Participating in natural disaster response is an example of volunteers working in groups on an as-needed basis.",
+        "predicted_FOL": "NaturalDisasterResponse(x) \u2227Volunteers(y) \u2227GroupCooperation(z)",
+        "true_FOL": "\u2203x (Volunteer(x) \u2227 ContributeTo(x, naturaldisasterresponse) \u2192 WorkInGroup(x) \u2227 WorkAsNeeded(x))"
+    },
+    {
+        "NL": "All books written by Tomas have sold more than 1 million copies. ",
+        "predicted_FOL": "\u00ac\u2203x (Bx\u2227Sx > 1000000)",
+        "true_FOL": "\u2200x (WrittenByTomas(x) \u2192 SoldOneMillion(x))"
+    },
+    {
+        "NL": "If KiKi neither jumps nor has legs, then KiKi is terricolous or has legs.",
+        "predicted_FOL": "\u2227 ~ KiKi. (Jump(KiKi) \u2194 ~ Legs(KiKi)) \u2228 HasLegs(KiKi)",
+        "true_FOL": "(\u00acJump(kiki) \u2227 \u00acHaveLegs(kiki)) \u2192 (Terricolous(kiki) \u2228 HaveLegs(kiki))"
+    },
+    {
+        "NL": "Ernest Pohl scored more than 180 goals in the Polish First Division. ",
+        "predicted_FOL": "\u2227 (P(x) \u2192 > 180)",
+        "true_FOL": "ScoredMoreThan180Goals(ernestpohl) \u2227 In(ernestpohl, polishfirstdivision)"
+    },
+    {
+        "NL": "Ailton Silva, born in 1995, is commonly known as Ailton.",
+        "predicted_FOL": "\u00acAilton Silva \u2192 Ailton",
+        "true_FOL": "BornIn(ailtonsilva, y1995) \u2227 CommonlyKnownAs(ailtonsilva, ailton)"
+    },
+    {
+        "NL": "All advocates of high tariff rates are Republicans.",
+        "predicted_FOL": "\u00acAdvocates(x) \u2227 TariffRates(x) \u2192 Member(x, R)",
+        "true_FOL": "\u2200x (AdvocateOfHighTariff(x) \u2192 Republican(x))"
+    },
+    {
+        "NL": "Neocrepidodera Corpulentas are flea beetles or moths.",
+        "predicted_FOL": "$\\neg C \\wedge C$",
+        "true_FOL": "FleaBeetle(neocrepidoderacorpulenta) \u2228 Moth(neocrepidoderacorpulenta)"
+    },
+    {
+        "NL": "All science-fiction is from an imaginative process.",
+        "predicted_FOL": "\u2200x (Sx \u2192 Ix)",
+        "true_FOL": " \u2200x (Science-fiction(x) \u2192 ImaginativeProcess(x)) "
+    },
+    {
+        "NL": "If something is a plant, then it is not a cute animal.",
+        "predicted_FOL": "\u00acP \u2192 \u00acC",
+        "true_FOL": "\u2200x (Plant(x) \u2192 \u00acCuteAnimal(x))"
+    },
+    {
+        "NL": "All lawyers are white-collar workers.",
+        "predicted_FOL": "\u2227 L \u2227 C",
+        "true_FOL": "\u2200x (Lawyer(x) \u2192 WhiteCollar(x))"
+    },
+    {
+        "NL": "All who present their work at the conference will attend in person. ",
+        "predicted_FOL": "\u00acP(x) \u2192 A(x)",
+        "true_FOL": "\u2200x (Present(x) \u2192 InPerson(x))"
+    },
+    {
+        "NL": "If a monitor has a resolution of 1080p, then it does not support the type-c port. ",
+        "predicted_FOL": "\u00ac(resolution = 1080p) \u2192 \u00ac(supports_port = type-c)",
+        "true_FOL": "\u2200x (A1080p(x) \u2192 \u00acTypeC(x))"
+    },
+    {
+        "NL": "Subway does not provide take-out service.",
+        "predicted_FOL": "\u00acSubway.takeout",
+        "true_FOL": "\u00ac(NoTakeOutService(subway) \u2227 NegativeReview(subway)) \u2192 PopularAmongLocalResidents(subway) \u2227 NoTakeOutService(subway)"
+    },
+    {
+        "NL": "If people are highly acclaimed in their profession, then they often hold tenured and high-ranking positions at their workplace.",
+        "predicted_FOL": "\u2227P \u2192 \u2203T\u2227H \u2208",
+        "true_FOL": "\u2200x (Acclaimed(x) \u2192 Tenured(x))"
+    },
+    {
+        "NL": "Some books that contain innovative ideas are about technology.",
+        "predicted_FOL": "\u2203x (B(x) \u2227 \u00acI(x))",
+        "true_FOL": "\u2203x (ContainInnovativeIdea(x) \u2227 AboutTechnology(x))"
+    },
+    {
+        "NL": "No dirt is an animal.",
+        "predicted_FOL": "\u00acDirt \u2208 Animal",
+        "true_FOL": "\u2200x (Dirt(x) \u2192 \u00acAnimal(x))"
+    },
+    {
+        "NL": "Steinhauer was not the winner of the 1992 du Maurier Classic.",
+        "predicted_FOL": "\u00acSteinhauer \u2208 DuMaurierClassicWinner(1992)",
+        "true_FOL": "\u00acWinner(maurier, steinhauer)"
+    },
+    {
+        "NL": "If a technique provides a spatial resolution of brains, then it is a measurement of brain activity. ",
+        "predicted_FOL": "\u00ac (Spatial Resolution of Brain Techniques \u21d2 Measurement of Brain Activity)",
+        "true_FOL": " \u2200x (ProvidesSpatialResolutionOfBrains(x) \u2192 MeasurementOfBrainActivity(x)) "
+    },
+    {
+        "NL": "Leetcode problems either have an AC rate lower than 20 percent or are starred by more than 1 thousand users. ",
+        "predicted_FOL": "\u2227 (\u00acAC(x)) \u2228 (\u22651000(y))",
+        "true_FOL": "\u2200x (LowerAC(x) \u2295 Starred(x))"
+    },
+    {
+        "NL": "If you are a World Tour player, then you are a professional tennis player.",
+        "predicted_FOL": "(P -> Q)",
+        "true_FOL": "\u2200x (WorldTourPlayer(x) \u2192 ProfessionalTennisPlayer(x))"
+    },
+    {
+        "NL": "All people who fulfill their nutritional daily intakes grew up in health-conscious childhood homes.",
+        "predicted_FOL": "\u00ac\u2203x (Fulfill Nutritional Daily Intakes \u2227 \u00acHealth-Conscious Childhood Home)",
+        "true_FOL": "\u2200x (Nutritional(x) \u2192 HealthyChildhood(x))"
+    },
+    {
+        "NL": "Some PhD students have high IQs.",
+        "predicted_FOL": "$\\forall x (PhD(x) \\rightarrow IQ(x) )$$",
+        "true_FOL": "\u2203x (PhDStudent(x) \u2227 HighIQ(x))"
+    },
+    {
+        "NL": "Andy Chang is from Hong Kong.",
+        "predicted_FOL": "\u2203x (x = Andy Chang \u2227 x \u2208 Hong Kong)",
+        "true_FOL": "From(andyChang, hongKong)"
+    },
+    {
+        "NL": "A soccer club eligible to attend UEL has a higher ranking than a soccer club eligible to attend UECL.",
+        "predicted_FOL": "\u2200x,y (SoccerClub(x) \u2227 UELEligible(x) \u2192 UECLEligible(y))",
+        "true_FOL": "\u2200x \u2200y (SoccerClub(x) \u2227 SoccerClub(y) \u2227 Attend(x, uel) \u2227 Attend(y, uecl) \u2192 HigherRank(x, y))"
+    },
+    {
+        "NL": "Billy is a kid.",
+        "predicted_FOL": "B \u2227 k",
+        "true_FOL": "Kid(billy)"
+    },
+    {
+        "NL": "If something is a carp, then it is a fish.",
+        "predicted_FOL": "((\\forall x)(x\\text{ is a carp}\\rightarrow x\\text{ is a fish})\\)",
+        "true_FOL": "\u2200x (Carp(x) \u2192 Fish(x))"
+    },
+    {
+        "NL": "Common utilities include water, electricity, gas, heating, sewer, trash, and recycling.",
+        "predicted_FOL": "P(water, electricity, gas, heating, sewer, trash, recycling).",
+        "true_FOL": "CommonUtilities(water) \u2227 CommonUtilities(electricity) \u2227 CommonUtilities(gas) \u2227 CommonUtilities(heating)"
+    },
+    {
+        "NL": "Cats are pets.",
+        "predicted_FOL": "$$Cats \\text{ are } pets$$",
+        "true_FOL": "Cat(fluffy)"
+    },
+    {
+        "NL": "Manchester United and Machester City are both European soccer clubs.",
+        "predicted_FOL": "\u00acManchester_United \u2227 \u00acManchester_City",
+        "true_FOL": "European(manchesterunited) \u2227 SoccerClub(manchesterunited) \u2227 European(manchestercity) \u2227 SoccerClub(manchestercity)"
+    },
+    {
+        "NL": "Everything that eats a lot needs a large territory.",
+        "predicted_FOL": "forall x. Eats(x) \\rightarrow \\exists y. Territory(y)",
+        "true_FOL": "\u2200x (EatsALot(x) \u2192 NeedsLargeTerritory(x))"
+    },
+    {
+        "NL": "All drinks are edible. ",
+        "predicted_FOL": "\u00acP(d) \u2227 E(d)",
+        "true_FOL": "\u2200x (Drink(x) \u2192 Edible(x))"
+    },
+    {
+        "NL": "Superman is not a man.",
+        "predicted_FOL": "\u00acSuperman \u2208 Man",
+        "true_FOL": "\u00acMan(superman) "
+    },
+    {
+        "NL": "If George likes music, he wants to compose.",
+        "predicted_FOL": "\u00acG \u2227 W \u2194 C",
+        "true_FOL": "LikesMusic(george) \u2192 WantsToCompose(george)"
+    },
+    {
+        "NL": "No coffee sold in Walmart is produced in France. ",
+        "predicted_FOL": "\u00accoffee(Walmart,France)",
+        "true_FOL": "\u2200x (Walmart(x) \u2192 \u00acFrance(x))"
+    },
+    {
+        "NL": "Barbara Ann Marshall did not participate in the event final of the 1972 Summer Olympics freestyle relay.",
+        "predicted_FOL": "\u00ac(Barbara Ann Marshall participated in the event final of the 1972 Summer Olympics freestyle relay.)",
+        "true_FOL": "\u00acParticipatedIn(barbaraannmarshall, finalheatfreestylerelay)"
+    },
+    {
+        "NL": "No ugly person is handsome.",
+        "predicted_FOL": "\u00acP \u2192 Q, where P is \"is ugly\" and Q is \"is handsome\"",
+        "true_FOL": "\u2200x (Ugly(x) \u2192 \u00acHandsome(x))"
+    },
+    {
+        "NL": "There are no customers who do not choose any plans. ",
+        "predicted_FOL": "\u00ac\u2203\ud835\udc65. C(\ud835\udc65) \u2227 \u00acP(\ud835\udc65)",
+        "true_FOL": "\u2200x (\u00acNoPlan(x))"
+    },
+    {
+        "NL": "All videos are visual. ",
+        "predicted_FOL": "\u00ac(\u00acvideo \u2227 visual)",
+        "true_FOL": "\u2200x (Video(x) \u2192 Visual(x))"
+    },
+    {
+        "NL": "Flannels are a type of clothing.",
+        "predicted_FOL": "\u2200C (Flannel(C)) \u2192 Clothing(C)",
+        "true_FOL": "Clothing(flannel)"
+    },
+    {
+        "NL": "Katherin Hafer married Walter Folger Brown.",
+        "predicted_FOL": "\u2227K.H.\u2227W.F. Brown",
+        "true_FOL": "Married(ketherinhafer, walterbrown)"
+    },
+    {
+        "NL": "All tissues are soft.",
+        "predicted_FOL": "\u00ac\u2203T. Tissue(T) \u2192 Soft(T)",
+        "true_FOL": "\u2200x (Tissue(x) \u2192 Soft(x))"
+    },
+    {
+        "NL": "Clay either both prefers to work at home over going to the office every day and makes his own matcha teas every morning with ceremonial-grade matcha powder, or he neither prefers to work at home over going to the office every day nor makes his own matcha teas every morning with ceremonial-grade matcha powder.",
+        "predicted_FOL": "\u2227 (\u00acWAH \u2228 \u00acGO) \u2227 \u00ac(MHMP)",
+        "true_FOL": "(WorkHome(clay) \u2227 Matcha(clay)) \u2295 (\u00acWorkHome(clay) \u2227 \u00acMatcha(clay))"
+    },
+    {
+        "NL": "The US GAAP is the accounting standard developed and used by the US Securities and Exchange Commission.",
+        "predicted_FOL": "\u2227(US GAAP = developed \u2227 US GAAP = used)",
+        "true_FOL": "DevelopedBy(usgaap, ussecuritiesandexchangecommission) \u2227 UsesGAAP(ussecuritiesandexchangecommission)"
+    },
+    {
+        "NL": "No student who enjoys nature has free time during the weekend. ",
+        "predicted_FOL": "\u00ac\u2203stud \u2208 Student  \u2227 \u2203w \u2208 Weekend  \u2227 \u00ac\u2203t \u2208 Time  \u2227 t \u2208 Weekend  \u21d2 \u2203n \u2208 Student  \u2227 n \u2209 Student.",
+        "true_FOL": "\u2200x (Nature(x) \u2192 \u00acFreeTime(x))"
+    },
+    {
+        "NL": "All Olympic gold medal winners are good athletes.",
+        "predicted_FOL": "\u2203x (Ogold(x) \u2227 Ggood(x))",
+        "true_FOL": "\u2200x (OlympicGoldMedalWinner(x) \u2192 Athlete(x))"
+    },
+    {
+        "NL": "People either work in the entertainment industry or are highly acclaimed in their profession.",
+        "predicted_FOL": "\u00acWork \u2208 entertainment OR renowned(x)",
+        "true_FOL": "\u2200x (Entertainment(x) \u2228 Acclaimed(x))"
+    },
+    {
+        "NL": "People who run unopposed for the Philadelphia City Council are elected to the positions they run for in the same year.",
+        "predicted_FOL": "p \u2192 (q(x) & \u00acq(y))",
+        "true_FOL": "\u2200x (RunFor(x) \u2227 PhiladephiaCouncil(x) \u2192 Elected(x))"
+    },
+    {
+        "NL": "If Mark either limps often and regularly or is often spry and energetic, then Mark limps often and regularly or is often tired and disinterested in his activities.",
+        "predicted_FOL": "\u00acL\u03a3i (limps i \u2227 regular) \u2192 \u00acL\u03a3i (is tired \u2227 disinterested)",
+        "true_FOL": "(Limp(Mark) \u2295 Spry(Mark)) \u2192 Limp(Mark) \u2228 Tired(Mark)"
+    },
+    {
+        "NL": "No people who never admit a mistake are good teachers.",
+        "predicted_FOL": "\u00ac(\u2200p \u2208 People \u2229 \u00acAdmit(p, False)) \u2192 \u2200t \u2208 Teacher \u21d2 Admit(t, True)",
+        "true_FOL": "\u2200x (NeverAdmitMistakes(x) \u2192 \u00acGoodTeacher(x))"
+    },
+    {
+        "NL": "All people who grew up in health-conscious childhood homes eat salads regularly.",
+        "predicted_FOL": "$\\forall x. (P(x) \\land \\neg Q(x))$$",
+        "true_FOL": "\u2200x (HealthyChildhood(x) \u2192 Salad(x))"
+    },
+    {
+        "NL": "All men are human.",
+        "predicted_FOL": "\u00ac\u2203x (x is male \u2227 x is human).",
+        "true_FOL": "\u2200x (Man(x) \u2192 Human(x))"
+    },
+    {
+        "NL": "Notable people with the given name include Dagfinn Aarskog, Dagfinn Bakke and Dagfinn Dahl. ",
+        "predicted_FOL": "( \\exists x. (x = Dagfinn Aarskog) \\vee (x = Dagfinn Bakke) \\vee (x = Dagfinn Dahl) \\)",
+        "true_FOL": "Dagfinn(dagfinnAarskog) \u2227 NotablePeople(dagfinnAarskog) \u2227 Dagfinn(dagfinnBakke) \u2227 NotablePeople(dagfinnBakke) \u2227 Dagfinn(dagfinnDahl) \u2227 NotablePeople(dagfinnDahl)"
+    },
+    {
+        "NL": "The world championships is a sporting event.",
+        "predicted_FOL": "\u2227S (world championships is a sporting event).",
+        "true_FOL": "SportingEvent(champs)"
+    },
+    {
+        "NL": "New France is not in Europe.",
+        "predicted_FOL": "\u00acFrance \u2208 Europe.",
+        "true_FOL": "\u00acLocatedIn(newfrance, europe)"
+    },
+    {
+        "NL": "No managers work remotely from home. ",
+        "predicted_FOL": "\u00ac(Managers \u2229 Work Remotely From Home)",
+        "true_FOL": "\u2200x (Manager(x) \u2192 \u00acWorkRemotelyFromHome(x))"
+    },
+    {
+        "NL": "If someone works at a school, then they are faculty.",
+        "predicted_FOL": "Statement:\n  ```\n  If x, then y\n  ```\n  where:\n  * x: person works at a school\n  * y: person is faculty",
+        "true_FOL": "\u2200x (WorkAtSchool(x) \u2192 Faculty(x))"
+    },
+    {
+        "NL": "If a cartoon character is from The Simpsons, then it is loved by children.",
+        "predicted_FOL": "\u00ac cartoon_character \u2208 The Simpsons \u2227 \u00ac child_likes(cartoon_character)",
+        "true_FOL": "\u2200x (Simpsons(x) \u2192 Love(children, x))"
+    },
+    {
+        "NL": "A werewolf has been scratched or bitten by another werewolf.",
+        "predicted_FOL": "\u2227(W \u2192 (X \u2228 Y))",
+        "true_FOL": "\u2200x \u2203y (Werewolf(x) \u2192 (BittenBy(x, y) \u2228 ScratchedBy(x, y)) \u2227 Werewolf(y))"
+    },
+    {
+        "NL": "The preceding station of Boves is Longueau.",
+        "predicted_FOL": "N(prior_station(Boves, Longueau))",
+        "true_FOL": "Precede(boves, longueau)"
+    },
+    {
+        "NL": "It stings to step on a stonefish.",
+        "predicted_FOL": "P(step on a stonefish) \u2227 \u00acQ(sting)",
+        "true_FOL": "\u2200x (StepOn(stonefish, x) \u2192 Sting(stonefish, x))"
+    },
+    {
+        "NL": "Larry is a big animal.",
+        "predicted_FOL": "(\u2200x (Lx \\rightarrow Cx)\\)",
+        "true_FOL": "BigAnimal(larry)"
+    },
+    {
+        "NL": "Windy is a great shooter.",
+        "predicted_FOL": "\u2227w,sg.",
+        "true_FOL": "GreatShooter(windy)"
+    },
+    {
+        "NL": "ETS administers international tests including the TOEFL, TOEIC, GRE and subject tests in more than 180 countries.",
+        "predicted_FOL": "\u2227(ETS administers international tests \u2227 (TOEFL, TOEIC, GRE \u2227 subject tests in more than 180 countries).",
+        "true_FOL": "\u2203x (Administers(ets, x) \u2227 InternationalTest(x) \u2227 (TOEFL(x) \u2228 TOEIC(x) \u2228 GRE(x) \u2228 SubjectTests(x)))"
+    },
+    {
+        "NL": "Mr. Smith has been to two cities in California.",
+        "predicted_FOL": "(\u2203x)(x = Mr. Smith \u2227 x \u2208 California)",
+        "true_FOL": "CaliforniaCityVisited(mr.smith, two)"
+    },
+    {
+        "NL": "If you lose time, you will be late for work.",
+        "predicted_FOL": "\u00acT \u2192 (T \u2192 F)",
+        "true_FOL": "\u2200x (LoseTime(x) \u2194 LateForWork(x))"
+    },
+    {
+        "NL": "All coffee produced in Columbia is produced in France. ",
+        "predicted_FOL": "\u00acC \u2194 F",
+        "true_FOL": "\u2200x (Columbia(x) \u2192 France(x))"
+    },
+    {
+        "NL": "All the songs that Max listens to that are classical music are from the 12th century.",
+        "predicted_FOL": "\u00ac(\u2203t)(\u2200s)(Maxlist(s)\u2227Music(s)\u2227century(t))",
+        "true_FOL": "\u2200x (MaxListensToClassicalMusic(x) \u2192 SongsFrom12thCentury(x))"
+    },
+    {
+        "NL": "Sam is using a Mac.",
+        "predicted_FOL": "\u00ac( Sam \u2227 using Mac )",
+        "true_FOL": " Use(sam, mac)"
+    },
+    {
+        "NL": "If a monitor is with a resolution of 1080p, then it does not support the type-c port. ",
+        "predicted_FOL": "\u00ac(monitor_resolution = 1080p) \u2192 \u00ac(monitor_supports_port_c)",
+        "true_FOL": "\u2200x (A1080p(x) \u2192 \u00acTypeC(x))"
+    },
+    {
+        "NL": "Zaha Hadid is a British-Iraqi architect, artist and designer.",
+        "predicted_FOL": "\u2203x (British \u2229 Iraqi \u2229 Architect \u2229 Artist \u2229 Designer \u2229 x)",
+        "true_FOL": "British-IraqiArchitect(zahaHadid)"
+    },
+    {
+        "NL": "All states are in their country.",
+        "predicted_FOL": "\\(\\forall x, y. \\text{State}(x) \\rightarrow \\text{Country}(y)\\)",
+        "true_FOL": "\u2200x \u2200y (State(x, y) \u2192 In(x, y))"
+    },
+    {
+        "NL": "No sheep are human.",
+        "predicted_FOL": "\u00acSheep\u2227Human",
+        "true_FOL": "\u2200x (Sheep(x) \u2192 \u00acHuman(x))"
+    },
+    {
+        "NL": "Machine translation is a language understanding task.",
+        "predicted_FOL": "P(machine translation, language understanding)",
+        "true_FOL": "NLU(machineTranslation)"
+    },
+    {
+        "NL": "All video games supporting users to simulate playing soccer games online are in the FIFA series.",
+        "predicted_FOL": "\u00ac (\u2200 game | game \u2208 VideoGame && game.supportsPlayingSoccerOnline -> game \u2208 FIFA)",
+        "true_FOL": "\u2200x (SoccerOnline(x) \u2192 FIFA(x))"
+    },
+    {
+        "NL": "Hadid was a visiting professor of Architectural Design at the Yale School of Architecture.",
+        "predicted_FOL": "\u2200x (Vx \u2192 Ax), where:\n      * Vx - Hadid\n      * Ax - was a visiting professor of Architectural Design\n      * x - the Yale School of Architecture",
+        "true_FOL": "Visitingprofessor(zahaHadid, yaleSchoolofArchitecture)"
+    },
+    {
+        "NL": "[BG] If a game sells more than one million copies, then it will be selected into the Top 10 list.",
+        "predicted_FOL": "\u00ac BG -> (C > 10000000)",
+        "true_FOL": "\u2200x (Game(x) \u2227 SellsMoreThan(x, onemillioncopies) \u2192 Top10(x))"
+    },
+    {
+        "NL": "The South Shetland Islands are considered part of Antarctica.",
+        "predicted_FOL": "\u00acAntarctica \u2229 South Shetland Islands",
+        "true_FOL": "Locate(shetland, antarctica)"
+    },
+    {
+        "NL": "To get a student visa, you must be full-time enrolled in an academic program.",
+        "predicted_FOL": "\u00acFulfilled (student, visa) \u2227 FullTimeEnrolled (student, program)",
+        "true_FOL": "\u2200x (StudentVisa(x) \u2192 FullTimeAcademic(x))"
+    },
+    {
+        "NL": "Events are either happy or sad.",
+        "predicted_FOL": "P(event) \u2228 \u00acP(event)",
+        "true_FOL": "\u2200x (Event(x) \u2192 Happy(x) \u2295 Sad(x))"
+    },
+    {
+        "NL": "People who spend a lot of money at casinos and other betting games visit the Las Vegas Strip regularly.",
+        "predicted_FOL": "\u2200x (P(x) \u2227 A(x)) \u2192 C(x)",
+        "true_FOL": "\u2200x (Casinos(x) \u2192 LasVegas(x))"
+    },
+    {
+        "NL": "UFC Fight Night was a mixed martial arts event and was held in Sweden.",
+        "predicted_FOL": "\u2227(UFC Fight Night \u2227 Location(Sweden))",
+        "true_FOL": "Event(uFCFightNight) \u2227 MixedMartial(uFCFightNight) \u2227 Sweden(uFCFightNight)"
+    },
+    {
+        "NL": "Phoenix's album \"Wolfgang Amadeus Phoenix\" sold over 500,000 copies. ",
+        "predicted_FOL": "$\\forall x. P(x) \\rightarrow Q(x)$",
+        "true_FOL": "Album(wolfgangamadeusphoenix) \u2227 IsAlbumOf(wolfgangamadeusphoenix, phoenix) \u2227 SoldOver(wolfgangamadeusphoenix, l500000)"
+    },
+    {
+        "NL": "If Robin neither enjoys healthcare fields and wants to help people with medical issues nor grew up with parents who worked as doctors, then Robin is either a person who studies hard or grew up with parents who worked as doctors.",
+        "predicted_FOL": "\u00ac(H(r) \u2227 \u00acW(r)) \u2228 (H(r) \u2227 \u00acP(r))",
+        "true_FOL": "\u00ac(Healthcare(Robin) \u2228 ParentDoctors(Robin)) \u2192 (Study(Robin) \u2228 ParentDoctors(Robin)) "
+    },
+    {
+        "NL": "Jack will go to the cinema if and only if Iron Man is on and the weather is not bad today.",
+        "predicted_FOL": "\u00acIronMan \u2227 \u00acBadWeather \u2192 JackWillGoToTheCinema",
+        "true_FOL": "GoToTheCinema(jack, today) \u2194 (Movie(ironman) \u2227 \u00acBadWeather(today))"
+    },
+    {
+        "NL": "All NBA players are professional basketball players.",
+        "predicted_FOL": "$\\forall x \\in NBA\\text{. }x\\text{ is a professional basketball player}.$$",
+        "true_FOL": "\u2200x (NBAPlayer(x) \u2192 ProfessionalBasketballPlayer(x))"
+    },
+    {
+        "NL": "If people go to the spa at least once a week, then they are not people who are miserly and need to save a large portion of their income.",
+        "predicted_FOL": "\u2227 (x \u2208 spa) \u2192 \u00ac (x \u2208 miserly)",
+        "true_FOL": "\u2200x Spa(x) \u2192 \u00acMiserly(x)"
+    },
+    {
+        "NL": "No animal with wings is a reptile.",
+        "predicted_FOL": "\u00ac(Animal(x) \u2227 HasWings(x)) \u2192 Reptile(x)",
+        "true_FOL": "\u2200x (Winged(x) \u2192 \u00acReptile(x))"
+    },
+    {
+        "NL": "Cancer biology is finding genetic alterations that confer selective advantage to cancer cells. ",
+        "predicted_FOL": "\u00acC \u2228 \u00acG",
+        "true_FOL": "FindingGeneticAlterationsConferSelectiveAdvantageCancerCells(cancerBiology)"
+    },
+    {
+        "NL": "Reinforcement learning is not used to train the state-of-the-art text summarization model.",
+        "predicted_FOL": "\u00acreinforcement_learning(state_of_the_art_text_summarization_model)",
+        "true_FOL": "\u00acTrainTextSumModel(reinforcementLearning)"
+    }
+]
