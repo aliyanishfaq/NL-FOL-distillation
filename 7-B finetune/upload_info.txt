@@ -1,0 +1,96 @@
+Uploaded file JSON:
+
+{
+    "id": "file-778a0965-9729-4689-abf7-06c24764bbd1",
+    "object": "file",
+    "created_at": 1717386766,
+    "type": null,
+    "purpose": "fine-tune",
+    "filename": "fine_tune_dataset.jsonl",
+    "bytes": 0,
+    "line_count": 0,
+    "processed": false,
+    "FileType": "jsonl"
+}
+
+model name: togethercomputer/CodeLlama-7b-Instruct
+batch size: 8
+
+together fine-tuning create --training-file file-778a0965-9729-4689-abf7-06c24764bbd1 --model codellama/CodeLlama-7b-hf --batch-size 8
+
+aliyanishfaq@DN0a1e2d33 7-B finetune % together fine-tuning create --training-file file-778a0965-9729-4689-abf7-06c24764bbd1 --model codellama/CodeLlama-7b-hf --batch-size 8
+{
+    "id": "ft-e4628a09-53ce-429f-92a9-3594ac6faa1b",
+    "training_file": "file-778a0965-9729-4689-abf7-06c24764bbd1",
+    "validation_file": "",
+    "model": "codellama/CodeLlama-7b-hf",
+    "output_name": "shreyas3@stanford.edu/CodeLlama-7b-hf-2024-06-03-04-19-11",
+    "n_epochs": 1,
+    "n_checkpoints": 1,
+    "batch_size": 8,
+    "learning_rate": 3e-05,
+    "eval_steps": 0,
+    "lora": false,
+    "lora_r": 8,
+    "lora_alpha": 8,
+    "lora_dropout": 0,
+    "created_at": "2024-06-03T04:19:11.011Z",
+    "updated_at": "2024-06-03T04:19:11.011Z",
+    "status": "pending",
+    "job_id": "",
+    "events": [
+        {
+            "object": "fine-tune-event",
+            "created_at": "2024-06-03T04:19:11.011Z",
+            "level": "",
+            "message": "Fine tune request created",
+            "type": "JOB_PENDING",
+            "param_count": 0,
+            "token_count": 0,
+            "wandb_url": "",
+            "hash": "",
+            "total_steps": 0,
+            "step": 0,
+            "checkpoint_path": "",
+            "model_path": "",
+            "training_offset": 0
+        }
+    ],
+    "token_count": 0,
+    "param_count": 0,
+    "total_price": 0,
+    "epochs_completed": 0,
+    "queue_depth": 0,
+    "wandb_project_name": "",
+    "wandb_url": "",
+    "training_file_num_lines": 0,
+    "training_file_size": 26194382,
+    "model_output_path": "s3://together-dev/finetune/65f2cec4b9673440cde33963/shreyas3@stanford.edu/CodeLlama-7b-hf-2024-06-03-04-19-11/ft-e4628a09-53ce-429f-92a9-3594ac6faa1b",
+    "Suffix": "",
+    "user_id": "65f2cec4b9673440cde33963",
+    "staring_epoch": 0,
+    "training_offset": 0,
+    "checkspoint_path": "",
+    "random_seed": "",
+    "owner_address": "0x3904ca9c57db7e8945c5516ea67681f950d565e0",
+    "total_steps": 0,
+    "steps_completed": 0,
+    "steps_paid_for": 0,
+    "wandb_key": "",
+    "enable_checkpoints": false,
+    "checkpoints": [],
+    "internal_flags": "",
+    "UsedModelName": "",
+    "job_stats": {
+        "FtUserTime": "",
+        "FtSysTime": "",
+        "FtMaxRss": 0,
+        "FtMinPgFlt": 0,
+        "FtMajPgFlt": 0,
+        "FtInBlock": 0,
+        "FtOutBlock": 0,
+        "FtNvCsw": 0,
+        "FtNivCsw": 0
+    }
+}
+(base) aliyanishfaq@DN0a1e2d33 7-B finetune % together fine-tuning list-events ft-e4628a09-53ce-429f-92a9-3594ac6faa1b

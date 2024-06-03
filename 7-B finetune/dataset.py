@@ -37,9 +37,9 @@ with open(fine_tune_dataset, 'w') as f:
         }
         f.write(json.dumps(jsonl_entry) + '\n')
     for data in rationale_data:
-        user_message = f'Translate the following sentence into a first order logic statement: “{data["NL"]}”. Provide the rationale for your answer, reach a conclusion, and then produce a first order logic statement for the natural language statement.'
+        user_message = f'Translate the following sentence into a first order logic statement: “{data["NL"]}”. Provide an explanation of how to arrive at the answer.'
         model_answer = data['Rationals'] + '\n' + '[FOL] ' + data['FOL']
-        system_prompt = f'Given a natural language statement, your task is to think step by step, generate a rationale, reach a conclusion, and then produce a first order logic statement for the natural language statement.'
+        system_prompt = f'Given a natural language statement, your task is to think step by step, explain your reasoning and produce a first order logic statement for the natural language statement.'
         formatted_string = format_instruction_rationale(system_prompt, user_message, model_answer)
         jsonl_entry = {
             "text": formatted_string
@@ -49,8 +49,3 @@ with open(fine_tune_dataset, 'w') as f:
 
 with open(fine_tune_dataset, 'r') as f:
     fine_tune_data = [json.loads(line) for line in f]
-
-print(fine_tune_data[0])
-print('----------------------------')
-print(fine_tune_data[-1])
-print('----------------------------')
