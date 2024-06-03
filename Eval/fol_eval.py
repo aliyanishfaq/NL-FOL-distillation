@@ -47,7 +47,7 @@ def load_data(file_path):
     return data
 
 # Load the dataset
-data = load_data('combined_data_corrected_11k.json')
+data = load_data('/Users/aliyanishfaq/Documents/GitHub/NL-FOL-distillation/7-B finetune/sds-7b.json')
 
 
 
@@ -61,9 +61,9 @@ import matplotlib.pyplot as plt
 logical_equivalence_scores = []
 bleu_scores = []
 
-for entry in data:
-    pred_fol = entry['predicted_FOL']
-    true_fol = entry['true_FOL']
+for entry in data[400:450]:
+    pred_fol = entry['Predicted_FOL']
+    true_fol = entry['True_FOL']
     le_score, _, _ = metric.Logical_Equivalence(pred_fol, true_fol)
     bleu_score = metric.FOL_BLEU(pred_fol, true_fol)
     logical_equivalence_scores.append(le_score)
