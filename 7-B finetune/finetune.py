@@ -6,7 +6,7 @@ import concurrent.futures
 def post_completion_request(prompt, attempt=0):
     endpoint = 'https://api.together.xyz/v1/completions'
     headers = {
-        "Authorization": "Bearer 1d3929da2f2264da6d976da8248009a4bd197031ce15dbf52357bd3c6ae03601"
+        "Authorization": "Bearer [API_KEY]"
     }
     payload = {
         "model": "aliyan@stanford.edu/CodeLlama-7b-hf-8.1-8.1k-2024-06-08-03-07-59-653346f1",
