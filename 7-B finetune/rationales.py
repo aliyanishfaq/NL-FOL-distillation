@@ -4,7 +4,7 @@ import json
 
 
 OPENAI_API_URL = "https://api.openai.com/v1/chat/completions"
-OPENAI_API_KEY = 'sk-proj-VWiBWvD9WddlgUhg28C5T3BlbkFJ7GpYBfEJjoToA7wNHROa'
+OPENAI_API_KEY = '[API_KEY]'
 
 
 def get_rationales(nl, fol):

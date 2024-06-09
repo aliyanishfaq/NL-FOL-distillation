@@ -5,7 +5,7 @@ import time
 
 
 OPENAI_API_URL = "https://api.openai.com/v1/chat/completions"
-OPENAI_API_KEY = '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'
+OPENAI_API_KEY = '[API_KEY]'
 
 
 def get_rationales(nl, fol):

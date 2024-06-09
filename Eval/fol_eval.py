@@ -8,6 +8,7 @@ https://github.com/gblackout/LogicLLaMA/blob/main/metrics.py
 """
 import evaluate
 from fol_parser import VecRuleEvaluator, parse_text_FOL_to_tree, msplit
+import json
 
 class Metrics:
     def __init__(self):
@@ -31,16 +32,6 @@ class Metrics:
 
 metric = Metrics()
 
-pred_fol = """
-Rina \u2115 (student \land \neg caffeine_is_drug) \text{ or } \neg (student \land \neg caffeine_is_drug)
-"""
-
-true_fol = """
-(Student(rina) \u2227 Unaware(rina)) \u2295 \u00ac(Student(rina) \u2228 Unaware(rina))
-"""
-
-import json
-
 def load_data(file_path):
     with open(file_path, 'r') as file:
         data = json.load(file)
@@ -49,11 +40,6 @@ def load_data(file_path):
 # Load the dataset
 data = load_data('/Users/aliyanishfaq/Documents/GitHub/NL-FOL-distillation/7-B finetune/sds-7b.json')
 
-
-
-
-#print(metric.FOL_BLEU(pred_fol, true_fol))
-#print(metric.Logical_Equivalence(pred_fol, true_fol))
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -93,4 +79,3 @@ plt.title('Distribution of BLEU Scores')
 plt.xlabel('Score')
 plt.ylabel('Frequency')
 plt.show()
-
