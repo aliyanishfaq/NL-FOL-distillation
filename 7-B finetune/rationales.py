@@ -69,8 +69,8 @@ for entry in selected_entries:
         break
 
 # Write the results to a new JSON file
-rationale_tune_dataset = '/Users/aliyanishfaq/Documents/GitHub/NL-FOL-distillation/Dataset/Train/rationale_dataset.json'
-with open(rationale_tune_dataset, 'w') as outfile:
+rationale_dataset = '/Users/aliyanishfaq/Documents/GitHub/NL-FOL-distillation/Dataset/Train/rationale_dataset.json'
+with open(rationale_dataset, 'w') as outfile:
     json.dump(results, outfile, indent=4)
 
 print(results)

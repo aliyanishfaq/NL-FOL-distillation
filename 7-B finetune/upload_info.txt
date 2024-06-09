@@ -1,31 +1,25 @@
-Uploaded file JSON:
-
+file upload:
+together files upload /Users/aliyanishfaq/Documents/GitHub/NL-FOL-distillation/Dataset/Train/fine_tune_dataset-8.1k-0k-rationales.jsonl
 {
-    "id": "file-778a0965-9729-4689-abf7-06c24764bbd1",
+    "id": "file-d6561a1b-10ea-4767-b824-a05fc2efcdec",
     "object": "file",
-    "created_at": 1717386766,
+    "created_at": 1717815873,
     "type": null,
     "purpose": "fine-tune",
-    "filename": "fine_tune_dataset.jsonl",
+    "filename": "fine_tune_dataset-8.1k-0k-rationales.jsonl",
     "bytes": 0,
     "line_count": 0,
     "processed": false,
     "FileType": "jsonl"
 }
-
-model name: togethercomputer/CodeLlama-7b-Instruct
-batch size: 8
-
-together fine-tuning create --training-file file-778a0965-9729-4689-abf7-06c24764bbd1 --model codellama/CodeLlama-7b-hf --batch-size 8
-
-aliyanishfaq@DN0a1e2d33 7-B finetune % together fine-tuning create --training-file file-778a0965-9729-4689-abf7-06c24764bbd1 --model codellama/CodeLlama-7b-hf --batch-size 8
+together fine-tuning create --training-file file-d6561a1b-10ea-4767-b824-a05fc2efcdec --model codellama/CodeLlama-7b-hf --batch-size 8 --n-epochs 2 --suffix 8.1-0k
 {
-    "id": "ft-e4628a09-53ce-429f-92a9-3594ac6faa1b",
-    "training_file": "file-778a0965-9729-4689-abf7-06c24764bbd1",
+    "id": "ft-1f2c29de-8236-4caa-83ab-d278dc7dd770",
+    "training_file": "file-d6561a1b-10ea-4767-b824-a05fc2efcdec",
     "validation_file": "",
     "model": "codellama/CodeLlama-7b-hf",
-    "output_name": "shreyas3@stanford.edu/CodeLlama-7b-hf-2024-06-03-04-19-11",
-    "n_epochs": 1,
+    "output_name": "aliyan@stanford.edu/CodeLlama-7b-hf-8.1-0k-2024-06-08-03-07-05",
+    "n_epochs": 2,
     "n_checkpoints": 1,
     "batch_size": 8,
     "learning_rate": 3e-05,
@@ -34,14 +28,14 @@ aliyanishfaq@DN0a1e2d33 7-B finetune % together fine-tuning create --training-fi
     "lora_r": 8,
     "lora_alpha": 8,
     "lora_dropout": 0,
-    "created_at": "2024-06-03T04:19:11.011Z",
-    "updated_at": "2024-06-03T04:19:11.011Z",
+    "created_at": "2024-06-08T03:07:05.406Z",
+    "updated_at": "2024-06-08T03:07:05.406Z",
     "status": "pending",
     "job_id": "",
     "events": [
         {
             "object": "fine-tune-event",
-            "created_at": "2024-06-03T04:19:11.011Z",
+            "created_at": "2024-06-08T03:07:05.406Z",
             "level": "",
             "message": "Fine tune request created",
             "type": "JOB_PENDING",
@@ -64,15 +58,15 @@ aliyanishfaq@DN0a1e2d33 7-B finetune % together fine-tuning create --training-fi
     "wandb_project_name": "",
     "wandb_url": "",
     "training_file_num_lines": 0,
-    "training_file_size": 26194382,
-    "model_output_path": "s3://together-dev/finetune/65f2cec4b9673440cde33963/shreyas3@stanford.edu/CodeLlama-7b-hf-2024-06-03-04-19-11/ft-e4628a09-53ce-429f-92a9-3594ac6faa1b",
-    "Suffix": "",
-    "user_id": "65f2cec4b9673440cde33963",
+    "training_file_size": 4767505,
+    "model_output_path": "s3://together-dev/finetune/663322a7971fa7956a151127/aliyan@stanford.edu/CodeLlama-7b-hf-8.1-0k-2024-06-08-03-07-05/ft-1f2c29de-8236-4caa-83ab-d278dc7dd770",
+    "Suffix": "8.1-0k",
+    "user_id": "663322a7971fa7956a151127",
     "staring_epoch": 0,
     "training_offset": 0,
     "checkspoint_path": "",
     "random_seed": "",
-    "owner_address": "0x3904ca9c57db7e8945c5516ea67681f950d565e0",
+    "owner_address": "0x808ece872964b11003abe85ad3d3d12a98068b91",
     "total_steps": 0,
     "steps_completed": 0,
     "steps_paid_for": 0,
@@ -93,4 +87,96 @@ aliyanishfaq@DN0a1e2d33 7-B finetune % together fine-tuning create --training-fi
         "FtNivCsw": 0
     }
 }
-(base) aliyanishfaq@DN0a1e2d33 7-B finetune % together fine-tuning list-events ft-e4628a09-53ce-429f-92a9-3594ac6faa1b
+
+
+
+
+together files upload /Users/aliyanishfaq/Documents/GitHub/NL-FOL-distillation/Dataset/Train/fine_tune_dataset-8.1k-8.1k-rationales.jsonl
+{
+    "id": "file-e279417e-9f45-4126-b7d2-a22dcc476fe3",
+    "object": "file",
+    "created_at": 1717815909,
+    "type": null,
+    "purpose": "fine-tune",
+    "filename": "fine_tune_dataset-8.1k-8.1k-rationales.jsonl",
+    "bytes": 0,
+    "line_count": 0,
+    "processed": false,
+    "FileType": "jsonl"
+}
+
+together fine-tuning create --training-file file-e279417e-9f45-4126-b7d2-a22dcc476fe3 --model codellama/CodeLlama-7b-hf --batch-size 8 --n-epochs 2 --suffix 8.1-8.1k
+{
+    "id": "ft-07c79460-26b3-453d-8d45-84e45f8928df",
+    "training_file": "file-e279417e-9f45-4126-b7d2-a22dcc476fe3",
+    "validation_file": "",
+    "model": "codellama/CodeLlama-7b-hf",
+    "output_name": "aliyan@stanford.edu/CodeLlama-7b-hf-8.1-8.1k-2024-06-08-03-07-59",
+    "n_epochs": 2,
+    "n_checkpoints": 1,
+    "batch_size": 8,
+    "learning_rate": 3e-05,
+    "eval_steps": 0,
+    "lora": false,
+    "lora_r": 8,
+    "lora_alpha": 8,
+    "lora_dropout": 0,
+    "created_at": "2024-06-08T03:07:59.86Z",
+    "updated_at": "2024-06-08T03:07:59.86Z",
+    "status": "pending",
+    "job_id": "",
+    "events": [
+        {
+            "object": "fine-tune-event",
+            "created_at": "2024-06-08T03:07:59.86Z",
+            "level": "",
+            "message": "Fine tune request created",
+            "type": "JOB_PENDING",
+            "param_count": 0,
+            "token_count": 0,
+            "wandb_url": "",
+            "hash": "",
+            "total_steps": 0,
+            "step": 0,
+            "checkpoint_path": "",
+            "model_path": "",
+            "training_offset": 0
+        }
+    ],
+    "token_count": 0,
+    "param_count": 0,
+    "total_price": 0,
+    "epochs_completed": 0,
+    "queue_depth": 0,
+    "wandb_project_name": "",
+    "wandb_url": "",
+    "training_file_num_lines": 0,
+    "training_file_size": 20493177,
+    "model_output_path": "s3://together-dev/finetune/663322a7971fa7956a151127/aliyan@stanford.edu/CodeLlama-7b-hf-8.1-8.1k-2024-06-08-03-07-59/ft-07c79460-26b3-453d-8d45-84e45f8928df",
+    "Suffix": "8.1-8.1k",
+    "user_id": "663322a7971fa7956a151127",
+    "staring_epoch": 0,
+    "training_offset": 0,
+    "checkspoint_path": "",
+    "random_seed": "",
+    "owner_address": "0x808ece872964b11003abe85ad3d3d12a98068b91",
+    "total_steps": 0,
+    "steps_completed": 0,
+    "steps_paid_for": 0,
+    "wandb_key": "",
+    "enable_checkpoints": false,
+    "checkpoints": [],
+    "internal_flags": "",
+    "UsedModelName": "",
+    "job_stats": {
+        "FtUserTime": "",
+        "FtSysTime": "",
+        "FtMaxRss": 0,
+        "FtMinPgFlt": 0,
+        "FtMajPgFlt": 0,
+        "FtInBlock": 0,
+        "FtOutBlock": 0,
+        "FtNvCsw": 0,
+        "FtNivCsw": 0
+    }
+}

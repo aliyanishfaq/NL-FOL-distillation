@@ -60,8 +60,8 @@ import matplotlib.pyplot as plt
 
 logical_equivalence_scores = []
 bleu_scores = []
-
-for entry in data[400:450]:
+print(len(data))
+for entry in data:
     pred_fol = entry['Predicted_FOL']
     true_fol = entry['True_FOL']
     le_score, _, _ = metric.Logical_Equivalence(pred_fol, true_fol)
